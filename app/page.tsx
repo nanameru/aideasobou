@@ -102,6 +102,60 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Stripe Requirements Section */}
+      <section className="notion-section bg-white dark:bg-black">
+        <div className="notion-like">
+          <h2 className="notion-subheading text-center mb-12">利用規約・ポリシー</h2>
+          
+          <div className="notion-card mb-8">
+            <h3 className="font-semibold text-lg mb-3">お問い合わせ</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
+              カスタマーサービスへのお問い合わせは以下の連絡先までお願いします。
+            </p>
+            <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+              <li>メールアドレス: info@ai-asobou.com</li>
+              <li>お問い合わせフォーム: <a href="#" className="underline">こちら</a></li>
+            </ul>
+          </div>
+          
+          <div className="notion-card mb-8">
+            <h3 className="font-semibold text-lg mb-3">返金ポリシー</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
+              当コミュニティは以下の返金ポリシーを設けています：
+            </p>
+            <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+              <li>お支払い後14日以内であれば、全額返金いたします。</li>
+              <li>14日を過ぎた場合の返金はいたしかねます。</li>
+              <li>返金をご希望の場合は、お問い合わせフォームよりご連絡ください。</li>
+            </ul>
+          </div>
+          
+          <div className="notion-card">
+            <h3 className="font-semibold text-lg mb-3">Stripeに関する情報</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
+              本番環境利用の申請時のビジネスのウェブサイトに関するよくあるご質問：
+            </p>
+            <div className="text-sm text-gray-600 dark:text-gray-400 space-y-4">
+              <div>
+                <p className="font-medium">Stripe からビジネスのウェブサイトを求められるのはなぜですか？</p>
+                <p>ウェブサイトやソーシャルメディアのプロフィール、モバイルアプリを利用してビジネスの宣伝や商品の販売をされている場合、Stripe は金融規制に従って、それらの媒体を調査して、ビジネスの内容と販売商品を確認する必要があります。</p>
+              </div>
+              <div>
+                <p className="font-medium">必要になるのはどのような情報ですか？</p>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>ビジネス名</li>
+                  <li>販売している商品・サービスの説明</li>
+                  <li>カスタマーサービスの連絡先情報</li>
+                  <li>返品に関するポリシーとプロセス</li>
+                  <li>返金と不審請求の申請に関するポリシー</li>
+                  <li>キャンセルに関するポリシー</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="border-t border-gray-200 dark:border-gray-800 py-8">
         <div className="notion-like text-center">

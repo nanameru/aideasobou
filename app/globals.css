@@ -25,6 +25,7 @@ body {
   font-family: var(--font-sans, Arial, Helvetica, sans-serif);
 }
 
+/* Notion-like UI Components */
 .notion-like {
   @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
 }
@@ -47,4 +48,41 @@ body {
 
 .notion-section {
   @apply py-12 sm:py-16;
+}
+
+/* Enhanced Notion-like UI */
+.notion-callout {
+  @apply bg-gray-50 dark:bg-gray-900 border-l-4 border-gray-300 dark:border-gray-700 p-4 rounded-r-md my-4;
+}
+
+.notion-link {
+  @apply text-blue-600 dark:text-blue-400 hover:underline;
+}
+
+.notion-tag {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200;
+}
+
+.notion-divider {
+  @apply border-t border-gray-200 dark:border-gray-800 my-8;
+}
+
+.notion-quote {
+  @apply border-l-4 border-gray-300 dark:border-gray-700 pl-4 py-2 italic text-gray-600 dark:text-gray-400;
+}
+
+.notion-feature-card {
+  @apply border border-gray-200 dark:border-gray-800 rounded-xl p-6 transition-all hover:shadow-lg hover:border-gray-300 dark:hover:border-gray-700;
+}
+
+.notion-nav {
+  @apply sticky top-0 z-10 backdrop-blur-sm bg-white/80 dark:bg-black/80 border-b border-gray-200 dark:border-gray-800;
+}
+
+.notion-icon-button {
+  @apply p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors;
+}
+
+.notion-tooltip {
+  @apply absolute z-10 px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-md shadow-sm dark:bg-gray-700;
 }

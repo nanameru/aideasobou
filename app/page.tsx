@@ -5,28 +5,39 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
       {/* Header */}
-      <header className="notion-nav">
+      <header className="notion-nav sticky top-0 z-10 backdrop-blur-sm bg-white/80 dark:bg-black/80 border-b border-gray-200 dark:border-gray-800">
         <div className="notion-like py-4 flex justify-between items-center">
           <h1 className="font-bold text-xl">AIで遊ぼうコミュニティー</h1>
-          <a href="#join" className="notion-button">参加する</a>
+          <nav className="flex items-center space-x-6">
+            <Link href="#features" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+              特典
+            </Link>
+            <Link href="#pricing" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+              料金
+            </Link>
+            <a href="#join" className="notion-button">参加する</a>
+          </nav>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="notion-section">
+      <section className="notion-section py-20 sm:py-28">
         <div className="notion-like">
-          <div className="flex flex-col items-center text-center">
-            <div className="mb-6 bg-gray-100 dark:bg-gray-800 p-3 rounded-full">
-              <LightBulbIcon className="w-8 h-8 text-gray-800 dark:text-gray-200" />
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="mb-8 bg-gray-100 dark:bg-gray-800 p-4 rounded-full inline-block">
+              <LightBulbIcon className="w-10 h-10 text-gray-800 dark:text-gray-200" />
             </div>
-            <h2 className="notion-heading">AIで遊ぼうコミュニティー</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl">
+            <h2 className="notion-heading mb-6">AIで遊ぼうコミュニティー</h2>
+            <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
               最新のAI情報をキャッチアップし、AIの可能性を一緒に探求するコミュニティです。
+              <span className="block mt-2">日々進化するAI技術を楽しく学び、活用していきましょう。</span>
             </p>
-            <a href="#join" className="notion-button flex items-center">
-              今すぐ参加する
-              <ArrowRightIcon className="ml-2 w-5 h-5" />
-            </a>
+            <div className="mt-8">
+              <a href="#join" className="notion-button inline-flex items-center">
+                今すぐ参加する
+                <ArrowRightIcon className="ml-2 w-5 h-5" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -212,7 +223,7 @@ export default function Home() {
               <div className="notion-callout mb-4">
                 <p>Stripeを利用した決済には、特定の要件があります。詳細は専用ページをご覧ください。</p>
               </div>
-              <Link href="/stripe" className="notion-button inline-flex items-center">
+              <Link href="/stripe.html" className="notion-button inline-flex items-center">
                 Stripe要件の詳細を見る
                 <ArrowRightIcon className="ml-2 w-5 h-5" />
               </Link>
@@ -230,7 +241,7 @@ export default function Home() {
                 © 2025 AIで遊ぼうコミュニティー. All rights reserved.
               </p>
               <div className="flex space-x-4">
-                <Link href="/stripe" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                <Link href="/stripe.html" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
                   Stripe要件
                 </Link>
                 <Link href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">

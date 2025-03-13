@@ -4,11 +4,11 @@ export default function StripeRequirements() {
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
       {/* Header */}
-      <header className="notion-nav">
+      <header className="notion-nav sticky top-0 z-10 backdrop-blur-sm bg-white/80 dark:bg-black/80 border-b border-gray-200 dark:border-gray-800">
         <div className="notion-like py-4 flex justify-between items-center">
           <h1 className="font-bold text-xl">AIで遊ぼうコミュニティー</h1>
-          <Link href="/" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors flex items-center">
-            <span className="mr-1">←</span> ホームに戻る
+          <Link href="/index.html" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors flex items-center group">
+            <span className="mr-1 group-hover:mr-2 transition-all">←</span> ホームに戻る
           </Link>
         </div>
       </header>
@@ -122,7 +122,7 @@ export default function StripeRequirements() {
             </div>
             
             <div className="mt-12 text-center">
-              <Link href="/" className="notion-button inline-flex items-center">
+              <Link href="/index.html" className="notion-button inline-flex items-center">
                 <span className="mr-2">←</span> ホームに戻る
               </Link>
             </div>

@@ -40,11 +40,13 @@ export default function Home() {
         </div>
         <ClientParticleBackground />
         
-        {/* Decorative elements */}
-        <div className="absolute top-20 right-10 w-20 h-20 bg-gradient-to-br from-gray-200 to-transparent rounded-full opacity-20 blur-xl"></div>
-        <div className="absolute bottom-20 left-10 w-32 h-32 bg-gradient-to-tr from-gray-200 to-transparent rounded-full opacity-20 blur-xl"></div>
+        {/* Enhanced decorative elements with gradients */}
+        <div className="absolute top-20 right-10 w-24 h-24 bg-gradient-to-br from-gray-200 to-transparent rounded-full opacity-30 blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 left-10 w-36 h-36 bg-gradient-to-tr from-gray-200 to-transparent rounded-full opacity-30 blur-xl animate-pulse"></div>
+        <div className="absolute top-1/3 left-1/4 w-48 h-48 bg-gradient-to-r from-gray-100 to-transparent rounded-full opacity-10 blur-2xl"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-gradient-to-l from-gray-100 to-transparent rounded-full opacity-10 blur-2xl"></div>
         
-        {/* Decorative elements */}
+        {/* Animated decorative elements */}
         <ClientMotion 
           className="absolute top-20 right-10 w-24 h-24 md:w-32 md:h-32 opacity-20 hidden md:block"
           initial={{ opacity: 0, scale: 0 }}
@@ -63,25 +65,74 @@ export default function Home() {
           <div className="w-full h-full rounded-full border-4 border-gray-800 dark:border-gray-200"></div>
         </ClientMotion>
         
+        {/* Additional animated decorative elements */}
+        <ClientMotion 
+          className="absolute top-1/2 left-1/4 w-12 h-12 md:w-16 md:h-16 opacity-10 hidden md:block"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ 
+            opacity: [0.1, 0.2, 0.1],
+            scale: [1, 1.2, 1],
+            rotate: [0, 45, 0]
+          }}
+          transition={{ 
+            duration: 8, 
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <div className="w-full h-full rounded-md border-2 border-gray-800 dark:border-gray-200"></div>
+        </ClientMotion>
+        
+        <ClientMotion 
+          className="absolute bottom-1/3 right-1/4 w-10 h-10 md:w-14 md:h-14 opacity-10 hidden md:block"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ 
+            opacity: [0.1, 0.2, 0.1],
+            scale: [1, 1.1, 1],
+            rotate: [0, -30, 0]
+          }}
+          transition={{ 
+            duration: 6, 
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+        >
+          <div className="w-full h-full rounded-md border-2 border-gray-800 dark:border-gray-200"></div>
+        </ClientMotion>
+        
         <div className="max-w-5xl mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* Left content */}
             <div className="text-left">
-              <div className="mb-8">
+              <div className="mb-8 relative">
+                {/* Enhanced badge with glow effect */}
                 <ClientMotion 
-                  className="inline-block bg-black dark:bg-white text-white dark:text-black px-4 py-2 rounded-lg text-sm font-medium mb-6"
+                  className="inline-block bg-black dark:bg-white text-white dark:text-black px-4 py-2 rounded-lg text-sm font-medium mb-6 relative z-10 shadow-lg"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
                   whileHover={{ 
                     scale: 1.05, 
-                    boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)"
+                    boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.2)"
                   }}
                 >
-                  AIの可能性を一緒に探求しよう
+                  <span className="relative z-10">AIの可能性を一緒に探求しよう</span>
+                  <motion.span 
+                    className="absolute inset-0 bg-black dark:bg-white rounded-lg opacity-0 blur-md"
+                    animate={{ 
+                      opacity: [0, 0.3, 0],
+                      scale: [0.8, 1.1, 0.8]
+                    }}
+                    transition={{ 
+                      duration: 3, 
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
                 </ClientMotion>
                 
-                <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-tight">
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-tight relative">
                   <ClientAnimatedText 
                     text="AIで遊ぼう" 
                     className="block mb-2 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-300 bg-clip-text text-transparent shimmer"
@@ -89,6 +140,14 @@ export default function Home() {
                   <ClientAnimatedText 
                     text="コミュニティー" 
                     className="block bg-gradient-to-r from-gray-600 to-gray-900 dark:from-gray-300 dark:to-gray-100 bg-clip-text text-transparent shimmer"
+                  />
+                  
+                  {/* Decorative underline */}
+                  <motion.span 
+                    className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-300 rounded-full"
+                    initial={{ width: "0%" }}
+                    animate={{ width: "100%" }}
+                    transition={{ duration: 1.2, delay: 1.5 }}
                   />
                 </h2>
               </div>
@@ -107,8 +166,10 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1 }}
+                className="relative"
               >
-              <ClientEnhancedButton className="px-8 py-4 text-lg bg-black text-white dark:bg-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors rounded-lg shadow-lg hover:shadow-xl">
+                {/* Enhanced CTA button with glow effect */}
+                <ClientEnhancedButton className="px-8 py-4 text-lg bg-black text-white dark:bg-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors rounded-lg shadow-lg hover:shadow-xl relative z-10">
                   <span className="flex items-center">
                     今すぐ参加する
                     <ClientFloatingAnimation 
@@ -119,6 +180,20 @@ export default function Home() {
                     </ClientFloatingAnimation>
                   </span>
                 </ClientEnhancedButton>
+                
+                {/* Button glow effect */}
+                <motion.div 
+                  className="absolute inset-0 bg-black dark:bg-white rounded-lg blur-xl opacity-0 z-0"
+                  animate={{ 
+                    opacity: [0, 0.15, 0],
+                    scale: [0.8, 1.15, 0.8]
+                  }}
+                  transition={{ 
+                    duration: 3, 
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
               </ClientMotion>
               
               {/* Mobile AI Network Visualization - only visible on small mobile devices */}

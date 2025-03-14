@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 export function AINetworkAnimation() {
   // Define nodes and connections for the network

@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react';
-import { motion } from 'framer-motion';
 
 export function ParticleBackground() {
   // Generate random particles
@@ -54,7 +53,7 @@ interface FadeInWhenVisibleProps {
   className?: string;
 }
 
-export function FadeInWhenVisible({ children, delay = 0, className = "" }: FadeInWhenVisibleProps) {
+export function FadeInWhenVisible({ children, className = "" }: FadeInWhenVisibleProps) {
   return (
     <div className={className}>
       {children}
@@ -68,7 +67,7 @@ interface StaggerChildrenProps {
   containerClassName?: string;
 }
 
-export function StaggerChildren({ children, staggerDelay = 0.1, containerClassName = "" }: StaggerChildrenProps) {
+export function StaggerChildren({ children, containerClassName = "" }: StaggerChildrenProps) {
   return (
     <div className={containerClassName}>
       {React.Children.map(children, (child) => (
@@ -84,7 +83,7 @@ interface HoverScaleProps {
   className?: string;
 }
 
-export function HoverScale({ children, scale = 1.05, className = "" }: HoverScaleProps) {
+export function HoverScale({ children, className = "" }: HoverScaleProps) {
   return (
     <div className={className}>
       {children}
@@ -104,7 +103,7 @@ interface FloatingAnimationProps {
   duration?: number;
 }
 
-export function FloatingAnimation({ children, className = "", duration = 6 }: FloatingAnimationProps) {
+export function FloatingAnimation({ children, className = "" }: FloatingAnimationProps) {
   return (
     <div className={className}>
       {children}
@@ -118,7 +117,7 @@ interface PulseAnimationProps {
   duration?: number;
 }
 
-export function PulseAnimation({ children, className = "", duration = 3 }: PulseAnimationProps) {
+export function PulseAnimation({ children, className = "" }: PulseAnimationProps) {
   return (
     <div className={className}>
       {children}

@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react';
-import { motion } from 'framer-motion';
 
 interface EnhancedFeatureCardProps {
   icon: ReactNode;
@@ -9,7 +8,7 @@ interface EnhancedFeatureCardProps {
   delay?: number;
 }
 
-export function EnhancedFeatureCard({ icon, title, description, tags = [], delay = 0 }: EnhancedFeatureCardProps) {
+export function EnhancedFeatureCard({ icon, title, description, tags = [] }: EnhancedFeatureCardProps) {
   return (
     <div className="enhanced-card bg-white dark:bg-black">
       <div className="flex flex-col md:flex-row items-start gap-6 md:gap-8">
@@ -45,7 +44,7 @@ interface EnhancedCardProps {
   hoverEffect?: boolean;
 }
 
-export function EnhancedCard({ children, className = "", hoverEffect = true }: EnhancedCardProps) {
+export function EnhancedCard({ children, className = "" }: EnhancedCardProps) {
   return (
     <div className={`enhanced-card bg-white dark:bg-black ${className}`}>
       {children}

@@ -212,7 +212,7 @@ export default function Home() {
               <ul className="space-y-3 text-gray-600 dark:text-gray-400">
                 <li className="flex items-center">
                   <span className="font-medium mr-3">メールアドレス:</span>
-                  <a href="mailto:info@ai-asobou.com" className="text-blue-600 dark:text-blue-400 hover:underline">info@ai-asobou.com</a>
+                  <a href="mailto:4869nanataitai@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">4869nanataitai@gmail.com</a>
                 </li>
                 <li className="flex items-center">
                   <span className="font-medium mr-3">X (Twitter):</span>
@@ -230,9 +230,9 @@ export default function Home() {
               </p>
               <ul className="space-y-4 text-gray-600 dark:text-gray-400">
                 {[
-                  "お支払い後14日以内であれば、全額返金いたします。",
-                  "14日を過ぎた場合の返金はいたしかねます。",
-                  "返金をご希望の場合は、お問い合わせフォームよりご連絡ください。"
+                  "サブスクリプションは月単位での課金となり、解約時点で日割り計算での返金はいたしません。",
+                  "次回の請求日前にキャンセルされた場合、次回以降の請求は発生しません。",
+                  "サービスに不具合があった場合は、個別にご相談ください。"
                 ].map((item, index) => (
                   <li 
                     key={index}

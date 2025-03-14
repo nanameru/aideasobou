@@ -109,7 +109,7 @@ export default function PrivacyPolicyPage() {
                     プライバシーポリシーに関するお問い合わせは、以下の連絡先までお願いします。
                   </p>
                   <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
-                    メールアドレス: info@ai-asobou.com
+                    メールアドレス: 4869nanataitai@gmail.com
                   </p>
                 </div>
                 

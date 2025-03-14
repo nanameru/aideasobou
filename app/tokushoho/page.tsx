@@ -38,13 +38,9 @@ export default function TokushohoPage() {
                         <td className="py-4">木村 太陽</td>
                       </tr>
                       <tr className="border-b border-gray-200 dark:border-gray-800">
-                        <th className="py-4 pr-4 text-left align-top">所在地</th>
-                        <td className="py-4">東京都新宿区西新宿1-1-1</td>
-                      </tr>
-                      <tr className="border-b border-gray-200 dark:border-gray-800">
                         <th className="py-4 pr-4 text-left align-top">連絡先</th>
                         <td className="py-4">
-                          <p>メールアドレス: info@ai-asobou.com</p>
+                          <p>メールアドレス: 4869nanataitai@gmail.com</p>
                           <p>X (Twitter): <a href="https://x.com/taiyo_ai_gakuse" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">@taiyo_ai_gakuse</a></p>
                         </td>
                       </tr>
@@ -99,9 +95,9 @@ export default function TokushohoPage() {
                         <th className="py-4 pr-4 text-left align-top">返金ポリシー</th>
                         <td className="py-4">
                           <ul className="list-disc pl-6 space-y-2">
-                            <li>お支払い後14日以内であれば、全額返金いたします。</li>
-                            <li>14日を過ぎた場合の返金はいたしかねます。</li>
-                            <li>返金をご希望の場合は、お問い合わせフォームよりご連絡ください。</li>
+                            <li>サブスクリプションは月単位での課金となり、解約時点で日割り計算での返金はいたしません。</li>
+                            <li>次回の請求日前にキャンセルされた場合、次回以降の請求は発生しません。</li>
+                            <li>サービスに不具合があった場合は、個別にご相談ください。</li>
                           </ul>
                         </td>
                       </tr>

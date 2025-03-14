@@ -108,7 +108,7 @@ export default function StripeRequirements() {
                 <div className="notion-card mb-10 p-8 rounded-xl">
                   <h4 className="text-xl font-medium mb-4 tracking-tight">お問い合わせ情報</h4>
                   <ul className="list-disc pl-6 space-y-3 text-gray-600 dark:text-gray-400 leading-relaxed">
-                    <li><strong>メールアドレス:</strong> info@ai-asobou.com</li>
+                    <li><strong>メールアドレス:</strong> 4869nanataitai@gmail.com</li>
                     <li><strong>お問い合わせフォーム:</strong> <a href="#" className="text-blue-600 dark:text-blue-400 underline">こちら</a></li>
                   </ul>
                 </div>
@@ -116,9 +116,9 @@ export default function StripeRequirements() {
                 <div className="notion-card mb-10 p-8 rounded-xl">
                   <h4 className="text-xl font-medium mb-4 tracking-tight">返金・キャンセルポリシー</h4>
                   <ul className="list-disc pl-6 space-y-3 text-gray-600 dark:text-gray-400 leading-relaxed">
-                    <li>お支払い後14日以内であれば、全額返金いたします。</li>
-                    <li>14日を過ぎた場合の返金はいたしかねます。</li>
-                    <li>返金をご希望の場合は、お問い合わせフォームよりご連絡ください。</li>
+                    <li>サブスクリプションは月単位での課金となり、解約時点で日割り計算での返金はいたしません。</li>
+                    <li>次回の請求日前にキャンセルされた場合、次回以降の請求は発生しません。</li>
+                    <li>サービスに不具合があった場合は、個別にご相談ください。</li>
                     <li>サブスクリプションのキャンセルは、いつでもマイページから可能です。</li>
                   </ul>
                 </div>

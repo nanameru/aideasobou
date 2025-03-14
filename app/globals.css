@@ -22,18 +22,19 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, sans-serif);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
   line-height: 1.5;
-  letter-spacing: -0.011em;
-  font-size: 15px;
+  letter-spacing: normal;
+  font-size: 16px;
   @apply sm:text-base;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   line-height: 1.2;
+  font-weight: 600;
 }
 
 /* Notion-like UI Components */
@@ -43,31 +44,35 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .notion-heading {
-  @apply font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-6 tracking-tight;
+  @apply font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-8 tracking-tight;
+  letter-spacing: -0.03em;
 }
 
 .notion-subheading {
-  @apply font-semibold text-xl sm:text-2xl mb-4 tracking-tight;
+  @apply font-semibold text-xl sm:text-2xl md:text-3xl mb-6 tracking-tight;
+  letter-spacing: -0.02em;
 }
 
 .notion-card {
-  @apply border border-gray-200 dark:border-gray-800 rounded-lg p-4 sm:p-6 md:p-8 transition-all w-full;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px;
+  @apply border border-gray-200 dark:border-gray-800 rounded-lg p-6 md:p-8 transition-all w-full;
+  box-shadow: none;
+  transition: box-shadow 0.2s ease-out;
 }
 
 .notion-card:hover {
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  transform: translateY(-1px);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 6px;
+  transform: none;
 }
 
 .notion-button {
-  @apply bg-black text-white dark:bg-white dark:text-black px-4 py-2 sm:px-6 sm:py-3 rounded-md font-medium transition-all inline-flex items-center text-sm sm:text-base;
+  @apply bg-black text-white dark:bg-white dark:text-black px-5 py-2 rounded-md font-medium transition-all inline-flex items-center text-sm sm:text-base;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
 }
 
 .notion-button:hover {
   @apply opacity-90;
   transform: translateY(-1px);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 6px;
 }
 
 .notion-secondary-button {
@@ -79,24 +84,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .notion-section {
-  @apply py-8 sm:py-16 md:py-20;
-  animation: fadeIn 0.5s ease-out forwards;
+  @apply py-12 sm:py-20 md:py-24;
+  animation: fadeIn 0.3s ease-out forwards;
 }
 
 .notion-section:nth-child(2) {
-  animation-delay: 0.1s;
+  animation-delay: 0.05s;
 }
 
 .notion-section:nth-child(3) {
-  animation-delay: 0.2s;
+  animation-delay: 0.1s;
 }
 
 .notion-section:nth-child(4) {
-  animation-delay: 0.3s;
+  animation-delay: 0.15s;
 }
 
 .notion-section:nth-child(5) {
-  animation-delay: 0.4s;
+  animation-delay: 0.2s;
 }
 
 .notion-like {
@@ -130,7 +135,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .notion-nav {
-  @apply sticky top-0 z-10 backdrop-blur-sm bg-white/80 dark:bg-black/80 border-b border-gray-200 dark:border-gray-800;
+  @apply sticky top-0 z-10 backdrop-blur-sm bg-white/90 dark:bg-black/90 py-4;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .notion-icon-button {

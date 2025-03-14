@@ -5,21 +5,23 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
       {/* Header */}
-      <header className="notion-nav sticky top-0 z-10 backdrop-blur-sm bg-white/80 dark:bg-black/80 border-b border-gray-200 dark:border-gray-800">
-        <div className="notion-like py-4 flex flex-col sm:flex-row justify-between items-center">
-          <h1 className="font-bold text-xl tracking-tight mb-4 sm:mb-0">AIで遊ぼうコミュニティー</h1>
-          <nav className="flex flex-wrap justify-center items-center gap-4 sm:gap-6">
-            <Link href="#features" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
-              特典
-            </Link>
-            <Link href="#pricing" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
-              料金
-            </Link>
-            <Link href="/stripe" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
-              Stripe要件
-            </Link>
-            <a href="#join" className="notion-button">参加する</a>
-          </nav>
+      <header className="notion-nav sticky top-0 z-10 backdrop-blur-sm bg-white/90 dark:bg-black/90">
+        <div className="notion-like py-4">
+          <div className="flex flex-col sm:flex-row justify-between items-center">
+            <h1 className="font-bold text-xl tracking-tight mb-4 sm:mb-0">AIで遊ぼうコミュニティー</h1>
+            <nav className="flex flex-wrap justify-center items-center gap-4 sm:gap-6">
+              <Link href="#features" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                特典
+              </Link>
+              <Link href="#pricing" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                料金
+              </Link>
+              <Link href="/stripe" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                Stripe要件
+              </Link>
+              <a href="#join" className="notion-button">参加する</a>
+            </nav>
+          </div>
         </div>
       </header>
 
@@ -51,8 +53,8 @@ export default function Home() {
           <div className="w-full max-w-3xl mx-auto">
             <h2 className="notion-subheading text-center mb-12">コミュニティの特典</h2>
             <div className="grid grid-cols-1 gap-8">
-              <div className="notion-feature-card flex flex-col md:flex-row items-start gap-4 md:gap-8 bg-white dark:bg-black p-6 md:p-8 rounded-xl">
-                <div className="flex-shrink-0 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-4 md:mb-0">
+              <div className="notion-feature-card flex flex-col md:flex-row items-start gap-6 md:gap-8 bg-white dark:bg-black p-6 md:p-8 rounded-lg">
+                <div className="flex-shrink-0 bg-gray-50 dark:bg-gray-900 p-4 rounded-lg mb-4 md:mb-0">
                   <LightBulbIcon className="w-8 h-8 text-gray-800 dark:text-gray-200" />
                 </div>
                 <div>
@@ -63,8 +65,8 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="notion-feature-card flex flex-col md:flex-row items-start gap-4 md:gap-8 bg-white dark:bg-black p-6 md:p-8 rounded-xl">
-                <div className="flex-shrink-0 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-4 md:mb-0">
+              <div className="notion-feature-card flex flex-col md:flex-row items-start gap-6 md:gap-8 bg-white dark:bg-black p-6 md:p-8 rounded-lg">
+                <div className="flex-shrink-0 bg-gray-50 dark:bg-gray-900 p-4 rounded-lg mb-4 md:mb-0">
                   <CalendarIcon className="w-8 h-8 text-gray-800 dark:text-gray-200" />
                 </div>
                 <div>
@@ -80,8 +82,8 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="notion-feature-card flex flex-col md:flex-row items-start gap-4 md:gap-8 bg-white dark:bg-black p-6 md:p-8 rounded-xl">
-                <div className="flex-shrink-0 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-4 md:mb-0">
+              <div className="notion-feature-card flex flex-col md:flex-row items-start gap-6 md:gap-8 bg-white dark:bg-black p-6 md:p-8 rounded-lg">
+                <div className="flex-shrink-0 bg-gray-50 dark:bg-gray-900 p-4 rounded-lg mb-4 md:mb-0">
                   <SearchIcon className="w-8 h-8 text-gray-800 dark:text-gray-200" />
                 </div>
                 <div>

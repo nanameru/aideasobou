@@ -4,13 +4,15 @@ export default function StripeRequirements() {
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
       {/* Header */}
-      <header className="notion-nav sticky top-0 z-10 backdrop-blur-sm bg-white/80 dark:bg-black/80 border-b border-gray-200 dark:border-gray-800">
-        <div className="notion-like py-4 flex justify-between items-center">
-          <h1 className="font-bold text-xl tracking-tight">AIで遊ぼうコミュニティー</h1>
-          <Link href="/" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors flex items-center group">
-            <span className="mr-2 group-hover:mr-3 transition-all">←</span> 
-            <span>ホームに戻る</span>
-          </Link>
+      <header className="notion-nav sticky top-0 z-10 backdrop-blur-sm bg-white/90 dark:bg-black/90">
+        <div className="notion-like py-4">
+          <div className="flex justify-between items-center">
+            <h1 className="font-bold text-xl tracking-tight">AIで遊ぼうコミュニティー</h1>
+            <Link href="/" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors flex items-center group">
+              <span className="mr-2 group-hover:mr-3 transition-all">←</span> 
+              <span>ホームに戻る</span>
+            </Link>
+          </div>
         </div>
       </header>
 

@@ -152,6 +152,9 @@ export default function StripeRequirements() {
                 <Link href="/privacy" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
                   プライバシーポリシー
                 </Link>
+                <Link href="/terms" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                  利用規約
+                </Link>
                 <Link href="/tokushoho" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
                   特定商取引法に基づく表記
                 </Link>

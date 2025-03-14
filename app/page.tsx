@@ -21,6 +21,7 @@ export default function Home() {
             <ul className="flex space-x-6">
               <li><a href="#features" className="hover:underline">特典</a></li>
               <li><a href="#pricing" className="hover:underline">料金</a></li>
+              <li><Link href="/terms" className="hover:underline">利用規約</Link></li>
               <li><Link href="/tokushoho" className="hover:underline">特定商取引法</Link></li>
               <li><a href="#contact" className="hover:underline">お問い合わせ</a></li>
             </ul>
@@ -253,9 +254,15 @@ export default function Home() {
             <div className="bg-gray-50 dark:bg-gray-900 border-l-4 border-gray-300 dark:border-gray-700 p-4 rounded-r-md mb-6">
               <p className="text-gray-600 dark:text-gray-400">Stripeを利用した決済には、特定の要件があります。詳細は専用ページをご覧ください。</p>
             </div>
-            <div>
+            <div className="flex space-x-4">
               <Link href="/stripe" className="inline-flex items-center bg-black text-white dark:bg-white dark:text-black px-4 py-2 rounded-md hover:opacity-90 transition-opacity">
                 Stripe要件の詳細を見る
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </Link>
+              <Link href="/terms" className="inline-flex items-center bg-gray-200 text-black dark:bg-gray-800 dark:text-white px-4 py-2 rounded-md hover:opacity-90 transition-opacity">
+                利用規約を見る
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
@@ -281,6 +288,9 @@ export default function Home() {
             <div className="flex flex-col space-y-4">
               <Link href="/privacy" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
                 プライバシーポリシー
+              </Link>
+              <Link href="/terms" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                利用規約
               </Link>
               <Link href="/tokushoho" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
                 特定商取引法に基づく表記

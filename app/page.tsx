@@ -118,7 +118,7 @@ export default function Home() {
                   }}
                 >
                   <span className="relative z-10">AIの可能性を一緒に探求しよう</span>
-                  <motion.span 
+                  <ClientMotion 
                     className="absolute inset-0 bg-black dark:bg-white rounded-lg opacity-0 blur-md"
                     animate={{ 
                       opacity: [0, 0.3, 0],
@@ -143,7 +143,7 @@ export default function Home() {
                   />
                   
                   {/* Decorative underline */}
-                  <motion.span 
+                  <ClientMotion 
                     className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-300 rounded-full"
                     initial={{ width: "0%" }}
                     animate={{ width: "100%" }}
@@ -182,7 +182,7 @@ export default function Home() {
                 </ClientEnhancedButton>
                 
                 {/* Button glow effect */}
-                <motion.div 
+                <ClientMotion 
                   className="absolute inset-0 bg-black dark:bg-white rounded-lg blur-xl opacity-0 z-0"
                   animate={{ 
                     opacity: [0, 0.15, 0],

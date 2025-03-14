@@ -100,15 +100,16 @@ export default function StripeRequirements() {
                   <ul className="list-disc pl-6 space-y-3 text-gray-600 dark:text-gray-400 leading-relaxed">
                     <li><strong>ビジネス名:</strong> AIで遊ぼうコミュニティー</li>
                     <li><strong>サービス内容:</strong> AI情報の配信、AIキャッチアップセッション、AI検索ツールの提供</li>
-                    <li><strong>料金:</strong> ¥3,000（一括払い）</li>
+                    <li><strong>料金:</strong> ¥3,000（月額サブスクリプション）</li>
                   </ul>
                 </div>
                 
                 <div className="notion-card mb-10 p-8 rounded-xl">
                   <h4 className="text-xl font-medium mb-4 tracking-tight">お問い合わせ情報</h4>
                   <ul className="list-disc pl-6 space-y-3 text-gray-600 dark:text-gray-400 leading-relaxed">
-                    <li><strong>メールアドレス:</strong> info@ai-asobou.com</li>
+                    <li><strong>メールアドレス:</strong> 4869nanataitai@gmail.com</li>
                     <li><strong>お問い合わせフォーム:</strong> <a href="#" className="text-blue-600 dark:text-blue-400 underline">こちら</a></li>
+                    <li><strong>X (Twitter):</strong> <a href="https://x.com/taiyo_ai_gakuse" className="text-blue-600 dark:text-blue-400 underline" target="_blank" rel="noopener noreferrer">@taiyo_ai_gakuse</a></li>
                   </ul>
                 </div>
                 

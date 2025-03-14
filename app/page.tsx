@@ -96,6 +96,21 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+              
+              <div className="notion-feature-card flex flex-col md:flex-row items-start gap-6 md:gap-8 bg-white dark:bg-black p-6 md:p-8 rounded-lg mt-8">
+                <div className="flex-shrink-0 bg-gray-50 dark:bg-gray-900 p-4 rounded-lg mb-4 md:mb-0">
+                  <LightBulbIcon className="w-8 h-8 text-gray-800 dark:text-gray-200" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-xl mb-4 tracking-tight">コミュニティについて</h3>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    このコミュニティーはAI情報のFOMO（Fear Of Missing Out）をなくすためのコミュニティーです。ビジネスでAIを活用するにあたり、「AI触らないといけない」という脅迫観念から触るのではなく、AIを楽しみながら活用しようというコンセプトのコミュニティーです。
+                  </p>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed mt-4">
+                    AIで遊ぼうをコンセプトとしており、AIで明日のことをテーマにしています。運営者の努力義務として週に1回AIプロダクトを開発し、それをオープンソースとして公開します。メンバーの皆さんはそれをカスタマイズしたりして楽しんでいただくことも可能です。
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -145,7 +160,7 @@ export default function Home() {
                   </div>
                   <h3 className="font-bold text-2xl mb-3 tracking-tight">メンバーシップ</h3>
                   <p className="text-4xl font-bold mb-4">¥3,000</p>
-                  <p className="text-gray-600 dark:text-gray-400 mb-8">一括払い</p>
+                  <p className="text-gray-600 dark:text-gray-400 mb-8">月額サブスクリプション</p>
                 </div>
                 <div className="notion-divider"></div>
                 <ul className="space-y-5 mb-8">
@@ -190,11 +205,15 @@ export default function Home() {
               <ul className="space-y-3 text-gray-600 dark:text-gray-400">
                 <li className="flex items-center">
                   <span className="font-medium mr-3">メールアドレス:</span>
-                  <a href="mailto:info@ai-asobou.com" className="notion-link">info@ai-asobou.com</a>
+                  <a href="mailto:4869nanataitai@gmail.com" className="notion-link">4869nanataitai@gmail.com</a>
                 </li>
                 <li className="flex items-center">
                   <span className="font-medium mr-3">お問い合わせフォーム:</span>
                   <a href="#" className="notion-link">こちら</a>
+                </li>
+                <li className="flex items-center">
+                  <span className="font-medium mr-3">X (Twitter):</span>
+                  <a href="https://x.com/taiyo_ai_gakuse" className="notion-link" target="_blank" rel="noopener noreferrer">@taiyo_ai_gakuse</a>
                 </li>
               </ul>
             </div>
@@ -232,6 +251,27 @@ export default function Home() {
                 Stripe要件の詳細を見る
                 <ArrowRightIcon className="ml-2 w-5 h-5" />
               </Link>
+            </div>
+            <div className="notion-feature-card mb-8 bg-white dark:bg-black p-8 rounded-xl mt-8">
+              <h3 className="font-semibold text-xl mb-4 tracking-tight border-b border-gray-200 dark:border-gray-800 pb-4">追加で必要な情報</h3>
+              <ul className="space-y-4 text-gray-600 dark:text-gray-400">
+                <li className="flex items-start">
+                  <CheckIcon className="w-5 h-5 mr-3 text-gray-500 flex-shrink-0 mt-1" />
+                  <span>カスタマーサービスの連絡先情報: メールアドレス、お問い合わせフォーム、X (Twitter) プロフィール</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckIcon className="w-5 h-5 mr-3 text-gray-500 flex-shrink-0 mt-1" />
+                  <span>返金と不審請求の申請に関するポリシー: 14日以内の全額返金保証</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckIcon className="w-5 h-5 mr-3 text-gray-500 flex-shrink-0 mt-1" />
+                  <span>キャンセルに関するポリシー: いつでもマイページからキャンセル可能</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckIcon className="w-5 h-5 mr-3 text-gray-500 flex-shrink-0 mt-1" />
+                  <span>プロモーションに関する規約: 初回登録特典あり</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

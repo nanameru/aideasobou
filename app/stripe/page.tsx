@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from 'next/link';
 
 export default function StripeRequirements() {
@@ -100,7 +101,7 @@ export default function StripeRequirements() {
                   <ul className="list-disc pl-6 space-y-3 text-gray-600 dark:text-gray-400 leading-relaxed">
                     <li><strong>ビジネス名:</strong> AIで遊ぼうコミュニティー</li>
                     <li><strong>サービス内容:</strong> AI情報の配信、AIキャッチアップセッション、AI検索ツールの提供</li>
-                    <li><strong>料金:</strong> ¥3,000（一括払い）</li>
+                    <li><strong>料金:</strong> ¥3,000（月額サブスクリプション）</li>
                   </ul>
                 </div>
                 
@@ -147,6 +148,12 @@ export default function StripeRequirements() {
               <div className="flex flex-col space-y-4">
                 <Link href="/" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
                   ホームに戻る
+                </Link>
+                <Link href="/privacy" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                  プライバシーポリシー
+                </Link>
+                <Link href="/tokushoho" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                  特定商取引法に基づく表記
                 </Link>
               </div>
             </div>

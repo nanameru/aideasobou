@@ -21,6 +21,7 @@ export default function Home() {
             <ul className="flex space-x-6">
               <li><a href="#features" className="hover:underline">特典</a></li>
               <li><a href="#pricing" className="hover:underline">料金</a></li>
+              <li><Link href="/tokushoho" className="hover:underline">特定商取引法</Link></li>
               <li><a href="#contact" className="hover:underline">お問い合わせ</a></li>
             </ul>
           </nav>
@@ -210,7 +211,7 @@ export default function Home() {
               <ul className="space-y-3 text-gray-600 dark:text-gray-400">
                 <li className="flex items-center">
                   <span className="font-medium mr-3">メールアドレス:</span>
-                  <a href="mailto:4869nanataitai@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">4869nanataitai@gmail.com</a>
+                  <a href="mailto:info@ai-asobou.com" className="text-blue-600 dark:text-blue-400 hover:underline">info@ai-asobou.com</a>
                 </li>
                 <li className="flex items-center">
                   <span className="font-medium mr-3">X (Twitter):</span>
@@ -278,15 +279,15 @@ export default function Home() {
               </p>
             </div>
             <div className="flex flex-col space-y-4">
-              <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+              <Link href="/privacy" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
                 プライバシーポリシー
-              </a>
-              <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
-                利用規約
-              </a>
-              <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+              </Link>
+              <Link href="/tokushoho" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
                 特定商取引法に基づく表記
-              </a>
+              </Link>
+              <Link href="/stripe" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                Stripe要件
+              </Link>
             </div>
           </div>
           <div className="border-t border-gray-200 dark:border-gray-800 mt-8 pt-8 text-center text-gray-500 dark:text-gray-400">

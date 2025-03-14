@@ -20,11 +20,18 @@ export function ClientHeader() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             whileHover={{ scale: 1.03 }}
+            className="relative"
           >
             <Link href="/" className="block">
               <h1 className="font-bold text-xl md:text-2xl bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-300 bg-clip-text text-transparent">
                 AIで遊ぼうコミュニティー
               </h1>
+              <motion.span 
+                className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-300"
+                initial={{ width: "0%" }}
+                animate={{ width: "100%" }}
+                transition={{ duration: 1, delay: 0.5 }}
+              />
             </Link>
           </motion.div>
           
@@ -121,21 +128,26 @@ const NavItem = ({
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
+      whileHover={{ y: -2 }}
     >
       {isLink ? (
         <Link href={href} className="relative group">
           <span className="block">{children}</span>
           <motion.span 
-            className="absolute bottom-0 left-0 w-0 h-0.5 bg-black dark:bg-white group-hover:w-full transition-all duration-300"
+            className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-300 group-hover:w-full transition-all duration-300"
             whileHover={{ width: '100%' }}
+            initial={{ width: '0%' }}
+            animate={{ width: '0%' }}
           />
         </Link>
       ) : (
         <a href={href} className="relative group">
           <span className="block">{children}</span>
           <motion.span 
-            className="absolute bottom-0 left-0 w-0 h-0.5 bg-black dark:bg-white group-hover:w-full transition-all duration-300"
+            className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-300 group-hover:w-full transition-all duration-300"
             whileHover={{ width: '100%' }}
+            initial={{ width: '0%' }}
+            animate={{ width: '0%' }}
           />
         </a>
       )}

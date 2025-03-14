@@ -12,8 +12,10 @@ export function MobileAINetwork() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 1.2 }}
     >
-      <div className="relative w-full h-full bg-gray-50 dark:bg-gray-900 rounded-2xl p-4 shadow-xl overflow-hidden">
-        <ClientAINetworkAnimation />
+      <div className="relative w-full h-full bg-gray-50 dark:bg-gray-900 rounded-2xl p-4 shadow-xl overflow-hidden card-3d">
+        <div className="card-3d-inner">
+          <ClientAINetworkAnimation />
+        </div>
       </div>
     </motion.div>
   );

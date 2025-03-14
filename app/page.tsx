@@ -226,7 +226,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-12 text-center">利用規約・ポリシー</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white dark:bg-black p-8 rounded-xl shadow-sm">
+            <div className="bg-white dark:bg-black p-6 sm:p-8 rounded-xl shadow-sm">
               <h3 className="font-semibold text-xl mb-4 tracking-tight border-b border-gray-200 dark:border-gray-800 pb-4">
                 お問い合わせ
               </h3>
@@ -234,18 +234,18 @@ export default function Home() {
                 カスタマーサービスへのお問い合わせは以下の連絡先までお願いします。
               </p>
               <ul className="space-y-3 text-gray-600 dark:text-gray-400">
-                <li className="flex items-center">
-                  <span className="font-medium mr-3">メールアドレス:</span>
+                <li className="flex flex-col sm:flex-row sm:items-center">
+                  <span className="font-medium mb-1 sm:mb-0 sm:mr-3">メールアドレス:</span>
                   <a href="mailto:4869nanataitai@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">4869nanataitai@gmail.com</a>
                 </li>
-                <li className="flex items-center">
-                  <span className="font-medium mr-3">X (Twitter):</span>
+                <li className="flex flex-col sm:flex-row sm:items-center">
+                  <span className="font-medium mb-1 sm:mb-0 sm:mr-3">X (Twitter):</span>
                   <a href="https://x.com/taiyo_ai_gakuse" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">@taiyo_ai_gakuse</a>
                 </li>
               </ul>
             </div>
             
-            <div className="bg-white dark:bg-black p-8 rounded-xl shadow-sm">
+            <div className="bg-white dark:bg-black p-6 sm:p-8 rounded-xl shadow-sm">
               <h3 className="font-semibold text-xl mb-4 tracking-tight border-b border-gray-200 dark:border-gray-800 pb-4">
                 返金ポリシー
               </h3>
@@ -270,7 +270,7 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="mt-12 bg-white dark:bg-black p-8 rounded-xl shadow-sm">
+          <div className="mt-12 bg-white dark:bg-black p-6 sm:p-8 rounded-xl shadow-sm">
             <h3 className="font-semibold text-xl mb-4 tracking-tight border-b border-gray-200 dark:border-gray-800 pb-4">Stripeに関する情報</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
               Stripeの決済に関する詳細情報は以下のページでご確認いただけます。
@@ -278,14 +278,14 @@ export default function Home() {
             <div className="bg-gray-50 dark:bg-gray-900 border-l-4 border-gray-300 dark:border-gray-700 p-4 rounded-r-md mb-6">
               <p className="text-gray-600 dark:text-gray-400">Stripeを利用した決済には、特定の要件があります。詳細は専用ページをご覧ください。</p>
             </div>
-            <div className="flex space-x-4">
-              <Link href="/stripe" className="inline-flex items-center bg-black text-white dark:bg-white dark:text-black px-4 py-2 rounded-md hover:opacity-90 transition-opacity">
+            <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+              <Link href="/stripe" className="inline-flex items-center justify-center bg-black text-white dark:bg-white dark:text-black px-4 py-2 rounded-md hover:opacity-90 transition-opacity">
                 Stripe要件の詳細を見る
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </Link>
-              <Link href="/terms" className="inline-flex items-center bg-gray-200 text-black dark:bg-gray-800 dark:text-white px-4 py-2 rounded-md hover:opacity-90 transition-opacity">
+              <Link href="/terms" className="inline-flex items-center justify-center bg-gray-200 text-black dark:bg-gray-800 dark:text-white px-4 py-2 rounded-md hover:opacity-90 transition-opacity">
                 利用規約を見る
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />

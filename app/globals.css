@@ -25,6 +25,8 @@ body {
   font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, sans-serif);
   line-height: 1.5;
   letter-spacing: -0.011em;
+  font-size: 15px;
+  @apply sm:text-base;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -37,10 +39,11 @@ h1, h2, h3, h4, h5, h6 {
 /* Notion-like UI Components */
 .notion-like {
   @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+  width: 100%;
 }
 
 .notion-heading {
-  @apply font-bold text-3xl sm:text-4xl md:text-5xl mb-6 tracking-tight;
+  @apply font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-6 tracking-tight;
 }
 
 .notion-subheading {
@@ -48,7 +51,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .notion-card {
-  @apply border border-gray-200 dark:border-gray-800 rounded-lg p-6 sm:p-8 transition-all;
+  @apply border border-gray-200 dark:border-gray-800 rounded-lg p-4 sm:p-6 md:p-8 transition-all w-full;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px;
 }
 
@@ -58,7 +61,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .notion-button {
-  @apply bg-black text-white dark:bg-white dark:text-black px-6 py-3 rounded-md font-medium transition-all inline-flex items-center;
+  @apply bg-black text-white dark:bg-white dark:text-black px-4 py-2 sm:px-6 sm:py-3 rounded-md font-medium transition-all inline-flex items-center text-sm sm:text-base;
 }
 
 .notion-button:hover {
@@ -76,7 +79,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .notion-section {
-  @apply py-16 sm:py-20;
+  @apply py-8 sm:py-16 md:py-20;
   animation: fadeIn 0.5s ease-out forwards;
 }
 
@@ -98,6 +101,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .notion-like {
   @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+  width: 100%;
 }
 
 /* Enhanced Notion-like UI */

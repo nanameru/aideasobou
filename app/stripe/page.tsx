@@ -7,7 +7,7 @@ export default function StripeRequirements() {
       <header className="notion-nav sticky top-0 z-10 backdrop-blur-sm bg-white/80 dark:bg-black/80 border-b border-gray-200 dark:border-gray-800">
         <div className="notion-like py-4 flex justify-between items-center">
           <h1 className="font-bold text-xl tracking-tight">AIで遊ぼうコミュニティー</h1>
-          <Link href="/index.html" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors flex items-center group">
+          <Link href="/" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors flex items-center group">
             <span className="mr-2 group-hover:mr-3 transition-all">←</span> 
             <span>ホームに戻る</span>
           </Link>
@@ -17,7 +17,7 @@ export default function StripeRequirements() {
       {/* Main Content */}
       <section className="notion-section">
         <div className="notion-like">
-          <div className="max-w-3xl mx-auto">
+          <div className="w-full max-w-3xl mx-auto">
             <h2 className="notion-heading mb-16 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">Stripe決済に関する情報</h2>
             
             <div className="prose prose-lg dark:prose-invert max-w-none">
@@ -123,7 +123,7 @@ export default function StripeRequirements() {
             </div>
             
             <div className="mt-16 text-center">
-              <Link href="/index.html" className="notion-button inline-flex items-center">
+              <Link href="/" className="notion-button inline-flex items-center">
                 <span className="mr-2">←</span> ホームに戻る
               </Link>
             </div>
@@ -143,7 +143,7 @@ export default function StripeRequirements() {
                 </p>
               </div>
               <div className="flex flex-col space-y-4">
-                <Link href="/index.html" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                <Link href="/" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
                   ホームに戻る
                 </Link>
               </div>

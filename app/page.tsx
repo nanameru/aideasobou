@@ -6,16 +6,16 @@ export default function Home() {
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
       {/* Header */}
       <header className="notion-nav sticky top-0 z-10 backdrop-blur-sm bg-white/80 dark:bg-black/80 border-b border-gray-200 dark:border-gray-800">
-        <div className="notion-like py-4 flex justify-between items-center">
-          <h1 className="font-bold text-xl tracking-tight">AIで遊ぼうコミュニティー</h1>
-          <nav className="flex items-center space-x-6">
+        <div className="notion-like py-4 flex flex-col sm:flex-row justify-between items-center">
+          <h1 className="font-bold text-xl tracking-tight mb-4 sm:mb-0">AIで遊ぼうコミュニティー</h1>
+          <nav className="flex flex-wrap justify-center items-center gap-4 sm:gap-6">
             <Link href="#features" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
               特典
             </Link>
             <Link href="#pricing" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
               料金
             </Link>
-            <Link href="/stripe.html" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+            <Link href="/stripe" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
               Stripe要件
             </Link>
             <a href="#join" className="notion-button">参加する</a>
@@ -24,9 +24,9 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="notion-section py-24 sm:py-32">
+      <section className="notion-section py-12 sm:py-20 md:py-24">
         <div className="notion-like">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="w-full max-w-3xl mx-auto text-center">
             <div className="mb-10 bg-gray-100 dark:bg-gray-800 p-5 rounded-full inline-block">
               <LightBulbIcon className="w-12 h-12 text-gray-800 dark:text-gray-200" />
             </div>
@@ -48,11 +48,11 @@ export default function Home() {
       {/* Features Section */}
       <section className="notion-section bg-gray-50 dark:bg-gray-900">
         <div className="notion-like">
-          <div className="max-w-3xl mx-auto">
+          <div className="w-full max-w-3xl mx-auto">
             <h2 className="notion-subheading text-center mb-12">コミュニティの特典</h2>
             <div className="grid grid-cols-1 gap-8">
-              <div className="notion-feature-card flex flex-col md:flex-row items-start gap-8 bg-white dark:bg-black p-8 rounded-xl">
-                <div className="flex-shrink-0 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+              <div className="notion-feature-card flex flex-col md:flex-row items-start gap-4 md:gap-8 bg-white dark:bg-black p-6 md:p-8 rounded-xl">
+                <div className="flex-shrink-0 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-4 md:mb-0">
                   <LightBulbIcon className="w-8 h-8 text-gray-800 dark:text-gray-200" />
                 </div>
                 <div>
@@ -63,8 +63,8 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="notion-feature-card flex flex-col md:flex-row items-start gap-8 bg-white dark:bg-black p-8 rounded-xl">
-                <div className="flex-shrink-0 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+              <div className="notion-feature-card flex flex-col md:flex-row items-start gap-4 md:gap-8 bg-white dark:bg-black p-6 md:p-8 rounded-xl">
+                <div className="flex-shrink-0 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-4 md:mb-0">
                   <CalendarIcon className="w-8 h-8 text-gray-800 dark:text-gray-200" />
                 </div>
                 <div>
@@ -80,8 +80,8 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="notion-feature-card flex flex-col md:flex-row items-start gap-8 bg-white dark:bg-black p-8 rounded-xl">
-                <div className="flex-shrink-0 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+              <div className="notion-feature-card flex flex-col md:flex-row items-start gap-4 md:gap-8 bg-white dark:bg-black p-6 md:p-8 rounded-xl">
+                <div className="flex-shrink-0 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-4 md:mb-0">
                   <SearchIcon className="w-8 h-8 text-gray-800 dark:text-gray-200" />
                 </div>
                 <div>
@@ -226,7 +226,7 @@ export default function Home() {
               <div className="notion-callout mb-6 bg-gray-50 dark:bg-gray-900 border-l-4 border-gray-300 dark:border-gray-700 p-4 rounded-r-md">
                 <p className="text-gray-600 dark:text-gray-400">Stripeを利用した決済には、特定の要件があります。詳細は専用ページをご覧ください。</p>
               </div>
-              <Link href="/stripe.html" className="notion-button inline-flex items-center">
+              <Link href="/stripe" className="notion-button inline-flex items-center">
                 Stripe要件の詳細を見る
                 <ArrowRightIcon className="ml-2 w-5 h-5" />
               </Link>
@@ -247,7 +247,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex flex-col space-y-4">
-                <Link href="/stripe.html" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                <Link href="/stripe" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
                   Stripe要件
                 </Link>
                 <Link href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">

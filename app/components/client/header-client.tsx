@@ -1,11 +1,16 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export function ClientHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+  
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -69,18 +74,23 @@ export function ClientHeader() {
           </motion.button>
           
           <nav className="hidden md:block">
-            <ul className="flex space-x-6">
-              <NavItem href="#features" delay={0.1}>特典</NavItem>
-              <NavItem href="#pricing" delay={0.2}>料金</NavItem>
-              <NavItem href="/terms" delay={0.3} isLink>利用規約</NavItem>
-              <NavItem href="/tokushoho" delay={0.4} isLink>特定商取引法</NavItem>
-              <NavItem href="#contact" delay={0.5}>お問い合わせ</NavItem>
-            </ul>
+            {isClient ? (
+              <ul className="flex space-x-6">
+                <NavItem href="#features" delay={0.1}>特典</NavItem>
+                <NavItem href="#pricing" delay={0.2}>料金</NavItem>
+                <NavItem href="/terms" delay={0.3} isLink>利用規約</NavItem>
+                <NavItem href="/tokushoho" delay={0.4} isLink>特定商取引法</NavItem>
+                <NavItem href="#contact" delay={0.5}>お問い合わせ</NavItem>
+              </ul>
+            ) : (
+              /* Placeholder for SSR */
+              <div className="h-6"></div>
+            )}
           </nav>
         </div>
         
         <AnimatePresence>
-          {isMenuOpen && (
+          {isClient && isMenuOpen && (
             <motion.nav 
               className="md:hidden mt-4"
               initial={{ height: 0, opacity: 0 }}

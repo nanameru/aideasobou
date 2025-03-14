@@ -21,7 +21,7 @@ import {
 } from './components/client/feature-card-client';
 import { EnhancedCard } from './components/ui/feature-card';
 import { ArrowRightIcon, CheckIcon, LightBulbIcon, CalendarIcon, SearchIcon } from './components/ui/icons';
-import { StaggerChildren, HoverScale } from './components/client/stagger-children';
+import { StaggerChildren, HoverScale } from './components/client/stagger-children.tsx';
 
 export default function Home() {
   return (

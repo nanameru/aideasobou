@@ -15,6 +15,7 @@ export function MobileAINetwork() {
       <div className="relative w-full h-full bg-gray-50 dark:bg-gray-900 rounded-2xl p-4 shadow-xl overflow-hidden card-3d">
         <div className="card-3d-inner">
           <ClientAINetworkAnimation />
+          <div className="absolute inset-0 bg-gradient-radial from-transparent to-gray-50 dark:to-gray-900 opacity-30 pointer-events-none" />
         </div>
       </div>
     </motion.div>

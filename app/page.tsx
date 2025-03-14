@@ -1,84 +1,108 @@
 import Link from 'next/link';
 import { 
-  AnimatedText, 
-  FloatingAnimation,
-  GradientBackground,
-  StaggerChildren,
-  PulseAnimation
-} from './components/ui/animations';
-import { AINetworkAnimation, CircuitPattern } from './components/ui/ai-network';
-import { EnhancedFeatureCard, EnhancedCard, EnhancedButton, PricingCard } from './components/ui/feature-card';
+  ClientAnimatedText, 
+  ClientFloatingAnimation,
+  ClientMotion,
+  ClientPulseAnimation
+} from './components/client/motion-wrapper';
+import { 
+  ClientAINetworkAnimation, 
+  ClientCircuitPattern,
+  ClientParticleBackground
+} from './components/client/ai-network-client';
+import { ClientHeader } from './components/client/header-client';
+import { ClientFooter } from './components/client/footer-client';
+import { MobileAINetwork } from './components/client/mobile-ai-network';
+import { ClientGradientBackground } from './components/client/gradient-background-client';
+import { 
+  ClientEnhancedFeatureCard,
+  ClientEnhancedButton,
+  ClientPricingCard
+} from './components/client/feature-card-client';
+import { EnhancedCard } from './components/ui/feature-card';
 import { ArrowRightIcon, CheckIcon, LightBulbIcon, CalendarIcon, SearchIcon } from './components/ui/icons';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
       {/* Header */}
-      <header className="py-4 border-b border-gray-200 dark:border-gray-800">
-        <div className="max-w-5xl mx-auto px-4 flex justify-between items-center">
-          <h1 className="font-bold text-xl">AIで遊ぼうコミュニティー</h1>
-          <nav>
-            <ul className="flex space-x-6">
-              <li><a href="#features" className="hover:underline">特典</a></li>
-              <li><a href="#pricing" className="hover:underline">料金</a></li>
-              <li><Link href="/terms" className="hover:underline">利用規約</Link></li>
-              <li><Link href="/tokushoho" className="hover:underline">特定商取引法</Link></li>
-              <li><a href="#contact" className="hover:underline">お問い合わせ</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <ClientHeader />
 
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden min-h-[90vh] flex items-center">
         {/* Dynamic background elements */}
-        <GradientBackground />
+        <ClientGradientBackground />
         <div className="absolute inset-0 z-0 opacity-30">
-          <CircuitPattern />
+          <ClientCircuitPattern />
         </div>
+        <ClientParticleBackground />
         
         <div className="max-w-5xl mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* Left content */}
             <div className="text-left">
               <div className="mb-8">
-                <div className="inline-block bg-black dark:bg-white text-white dark:text-black px-4 py-2 rounded-lg text-sm font-medium mb-6">
+                <ClientMotion 
+                  className="inline-block bg-black dark:bg-white text-white dark:text-black px-4 py-2 rounded-lg text-sm font-medium mb-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                >
                   AIの可能性を一緒に探求しよう
-                </div>
+                </ClientMotion>
                 
                 <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-tight">
-                  <AnimatedText 
+                  <ClientAnimatedText 
                     text="AIで遊ぼう" 
-                    className="block mb-2 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-300 bg-clip-text text-transparent"
+                    className="block mb-2 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-300 bg-clip-text text-transparent shimmer"
                   />
-                  <AnimatedText 
+                  <ClientAnimatedText 
                     text="コミュニティー" 
-                    className="block bg-gradient-to-r from-gray-600 to-gray-900 dark:from-gray-300 dark:to-gray-100 bg-clip-text text-transparent"
+                    className="block bg-gradient-to-r from-gray-600 to-gray-900 dark:from-gray-300 dark:to-gray-100 bg-clip-text text-transparent shimmer"
                   />
                 </h2>
               </div>
               
-              <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+              <ClientMotion 
+                className="text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+              >
                 最新のAI情報をキャッチアップし、AIの可能性を一緒に探求するコミュニティです。
                 <span className="block mt-4">日々進化するAI技術を楽しく学び、活用していきましょう。</span>
-              </p>
+              </ClientMotion>
               
-              <div>
-                <EnhancedButton className="px-8 py-4 text-lg">
+              <ClientMotion
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1 }}
+              >
+                <ClientEnhancedButton className="px-8 py-4 text-lg">
                   今すぐ参加する
                   <ArrowRightIcon className="ml-2 w-5 h-5" />
-                </EnhancedButton>
-              </div>
+                </ClientEnhancedButton>
+              </ClientMotion>
+              
+              {/* Mobile AI Network Visualization - only visible on mobile */}
+              <MobileAINetwork />
             </div>
             
             {/* Right content - AI Network Visualization */}
-            <div className="relative h-[400px] hidden md:block">
-              <FloatingAnimation className="w-full h-full">
-                <div className="relative w-full h-full bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 shadow-xl overflow-hidden">
-                  <AINetworkAnimation />
+            <ClientMotion 
+              className="relative h-[400px] hidden md:block"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <ClientFloatingAnimation className="w-full h-full">
+                <div className="relative w-full h-full bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 shadow-xl overflow-hidden card-3d">
+                  <div className="card-3d-inner">
+                    <ClientAINetworkAnimation />
+                  </div>
                 </div>
-              </FloatingAnimation>
-            </div>
+              </ClientFloatingAnimation>
+            </ClientMotion>
           </div>
         </div>
       </section>
@@ -88,28 +112,28 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">コミュニティの特典</h2>
           
-          <StaggerChildren containerClassName="grid grid-cols-1 md:grid-cols-3 gap-8" staggerDelay={0.15}>
-            <EnhancedFeatureCard
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <ClientEnhancedFeatureCard
               icon={<LightBulbIcon className="h-8 w-8" />}
               title="AI情報の毎日配信"
               description="最新のAI情報を毎日お届けします。常に最先端の技術動向をキャッチアップできます。"
               tags={["最新情報", "AI技術", "トレンド"]}
             />
             
-            <EnhancedFeatureCard
+            <ClientEnhancedFeatureCard
               icon={<CalendarIcon className="h-8 w-8" />}
               title="週1回のAIキャッチアップセッション"
               description="毎週日曜日に2時間のAI情報キャッチアップセッションを開催。最新トレンドを深掘りします。"
               tags={["毎週日曜日", "2時間", "ライブ配信"]}
             />
             
-            <EnhancedFeatureCard
+            <ClientEnhancedFeatureCard
               icon={<SearchIcon className="h-8 w-8" />}
               title="ピタッとAI検索"
               description="AI情報を能動的または自動的に検索できる独自ツール「ピタッとAI」へのアクセス権が得られます。"
               tags={["検索ツール", "無制限利用"]}
             />
-          </StaggerChildren>
+          </div>
         </div>
       </section>
 
@@ -131,10 +155,10 @@ export default function Home() {
             </div>
             
             <div className="m-4 p-8 bg-gray-50 dark:bg-gray-900 text-center relative overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800">
-              <CircuitPattern />
+              <ClientCircuitPattern />
               
               <div className="relative z-10">
-                <PulseAnimation className="w-20 h-20 mx-auto mb-6 bg-black dark:bg-white rounded-full flex items-center justify-center">
+                <ClientPulseAnimation className="w-20 h-20 mx-auto mb-6 bg-black dark:bg-white rounded-full flex items-center justify-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="32"
@@ -155,7 +179,7 @@ export default function Home() {
                     <path d="M7 17h.01" />
                     <path d="M17 17h.01" />
                   </svg>
-                </PulseAnimation>
+                </ClientPulseAnimation>
                 
                 <p className="text-gray-600 dark:text-gray-400 relative z-10 max-w-md mx-auto">
                   ※ここにアプリケーションのスクリーンショットが定期的に公開されます。
@@ -179,7 +203,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-12 text-center">料金プラン</h2>
           
           <div className="max-w-md mx-auto">
-            <PricingCard
+            <ClientPricingCard
               title="メンバーシップ"
               price="¥3,000"
               period="月額サブスクリプション"
@@ -273,38 +297,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-200 dark:border-gray-800 py-12 mt-16">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-6 md:mb-0">
-              <h2 className="font-bold text-xl mb-4 tracking-tight">AIで遊ぼうコミュニティー</h2>
-              <p className="text-gray-600 dark:text-gray-400">
-                最新のAI情報をキャッチアップし、AIの可能性を一緒に探求するコミュニティ
-              </p>
-              <p className="text-gray-600 dark:text-gray-400 mt-4">
-                AIで明日のことをコンセプトとした、楽しみながらAIを活用するコミュニティです。
-              </p>
-            </div>
-            <div className="flex flex-col space-y-4">
-              <Link href="/privacy" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
-                プライバシーポリシー
-              </Link>
-              <Link href="/terms" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
-                利用規約
-              </Link>
-              <Link href="/tokushoho" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
-                特定商取引法に基づく表記
-              </Link>
-              <Link href="/stripe" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
-                Stripe要件
-              </Link>
-            </div>
-          </div>
-          <div className="border-t border-gray-200 dark:border-gray-800 mt-8 pt-8 text-center text-gray-500 dark:text-gray-400">
-            <p>&copy; 2025 AIで遊ぼうコミュニティー. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <ClientFooter />
     </div>
   );
 }

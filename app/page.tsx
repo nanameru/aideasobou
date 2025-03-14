@@ -129,7 +129,7 @@ export default function Home() {
                       repeat: Infinity,
                       ease: "easeInOut"
                     }}
-                  />
+                  ><div className="w-full h-full"></div></ClientMotion>
                 </ClientMotion>
                 
                 <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-tight relative">
@@ -148,7 +148,7 @@ export default function Home() {
                     initial={{ width: "0%" }}
                     animate={{ width: "100%" }}
                     transition={{ duration: 1.2, delay: 1.5 }}
-                  />
+                  ><div className="w-full h-full"></div></ClientMotion>
                 </h2>
               </div>
               
@@ -193,7 +193,7 @@ export default function Home() {
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
-                />
+                ><div className="w-full h-full"></div></ClientMotion>
               </ClientMotion>
               
               {/* Mobile AI Network Visualization - only visible on small mobile devices */}

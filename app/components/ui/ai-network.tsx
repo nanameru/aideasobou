@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-export const AINetworkAnimation = () => {
+export function AINetworkAnimation() {
   // Define nodes and connections for the network
   const nodes = [
     { id: 1, x: 50, y: 30 },
@@ -37,7 +37,7 @@ export const AINetworkAnimation = () => {
           if (!fromNode || !toNode) return null;
           
           return (
-            <motion.line
+            <line
               key={`connection-${index}`}
               x1={fromNode.x}
               y1={fromNode.y}
@@ -45,35 +45,20 @@ export const AINetworkAnimation = () => {
               y2={toNode.y}
               stroke="currentColor"
               strokeWidth="0.5"
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ pathLength: 1, opacity: 0.6 }}
-              transition={{ 
-                duration: 1.5, 
-                delay: index * 0.1,
-                ease: "easeInOut" 
-              }}
+              opacity={0.6}
             />
           );
         })}
         
         {/* Nodes */}
         {nodes.map((node) => (
-          <motion.circle
+          <circle
             key={`node-${node.id}`}
             cx={node.x}
             cy={node.y}
             r={node.id === 6 ? 3 : 2}
-            fill="currentColor"
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ 
-              scale: 1, 
-              opacity: 1,
-              fill: node.id === 6 ? "#000" : "currentColor" 
-            }}
-            transition={{ 
-              duration: 0.5, 
-              delay: node.id * 0.1 
-            }}
+            fill={node.id === 6 ? "#000" : "currentColor"}
+            opacity={1}
           />
         ))}
       </svg>
@@ -81,7 +66,7 @@ export const AINetworkAnimation = () => {
   );
 };
 
-export const CircuitPattern = () => {
+export function CircuitPattern() {
   return (
     <div className="absolute inset-0 opacity-10">
       <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">

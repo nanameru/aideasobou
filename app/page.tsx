@@ -3,8 +3,10 @@ import {
   ClientAnimatedText, 
   ClientFloatingAnimation,
   ClientMotion,
-  ClientPulseAnimation
+  ClientPulseAnimation,
+  ClientGlowingText
 } from './components/client/motion-wrapper';
+import { motion } from 'framer-motion';
 import { 
   ClientAINetworkAnimation, 
   ClientCircuitPattern,
@@ -19,9 +21,9 @@ import {
   ClientEnhancedButton,
   ClientPricingCard
 } from './components/client/feature-card-client';
-import { EnhancedCard } from './components/ui/feature-card';
 import { ArrowRightIcon, CheckIcon, LightBulbIcon, CalendarIcon, SearchIcon } from './components/ui/icons';
 import { StaggerChildren, HoverScale } from './components/client/stagger-children';
+import { ClientEnhancedCard } from './components/client/feature-card-client';
 
 export default function Home() {
   return (
@@ -30,13 +32,36 @@ export default function Home() {
       <ClientHeader />
 
       {/* Hero Section */}
-      <section className="py-20 relative overflow-hidden min-h-[90vh] flex items-center">
+      <section className="py-12 md:py-20 relative overflow-hidden min-h-[90vh] flex items-center">
         {/* Dynamic background elements */}
         <ClientGradientBackground />
         <div className="absolute inset-0 z-0 opacity-30">
           <ClientCircuitPattern />
         </div>
         <ClientParticleBackground />
+        
+        {/* Decorative elements */}
+        <div className="absolute top-20 right-10 w-20 h-20 bg-gradient-to-br from-gray-200 to-transparent rounded-full opacity-20 blur-xl"></div>
+        <div className="absolute bottom-20 left-10 w-32 h-32 bg-gradient-to-tr from-gray-200 to-transparent rounded-full opacity-20 blur-xl"></div>
+        
+        {/* Decorative elements */}
+        <ClientMotion 
+          className="absolute top-20 right-10 w-24 h-24 md:w-32 md:h-32 opacity-20 hidden md:block"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 0.2, scale: 1, rotate: 180 }}
+          transition={{ duration: 1.5, delay: 1.2 }}
+        >
+          <div className="w-full h-full rounded-full border-4 border-gray-800 dark:border-gray-200"></div>
+        </ClientMotion>
+        
+        <ClientMotion 
+          className="absolute bottom-20 left-10 w-16 h-16 md:w-24 md:h-24 opacity-20 hidden md:block"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 0.2, scale: 1, rotate: -90 }}
+          transition={{ duration: 1.5, delay: 1.5 }}
+        >
+          <div className="w-full h-full rounded-full border-4 border-gray-800 dark:border-gray-200"></div>
+        </ClientMotion>
         
         <div className="max-w-5xl mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -48,6 +73,10 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
+                  whileHover={{ 
+                    scale: 1.05, 
+                    boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)"
+                  }}
                 >
                   AIの可能性を一緒に探求しよう
                 </ClientMotion>
@@ -79,9 +108,16 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1 }}
               >
-                <ClientEnhancedButton className="px-8 py-4 text-lg">
-                  今すぐ参加する
-                  <ArrowRightIcon className="ml-2 w-5 h-5" />
+              <ClientEnhancedButton className="px-8 py-4 text-lg bg-black text-white dark:bg-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors rounded-lg shadow-lg hover:shadow-xl">
+                  <span className="flex items-center">
+                    今すぐ参加する
+                    <ClientFloatingAnimation 
+                      className="ml-2 inline-flex" 
+                      duration={1.5}
+                    >
+                      <ArrowRightIcon className="w-5 h-5" />
+                    </ClientFloatingAnimation>
+                  </span>
                 </ClientEnhancedButton>
               </ClientMotion>
               
@@ -102,9 +138,29 @@ export default function Home() {
                 <div className="relative w-full h-full bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 shadow-xl overflow-hidden card-3d">
                   <div className="card-3d-inner">
                     <ClientAINetworkAnimation />
+                    <div className="absolute inset-0 bg-gradient-radial from-transparent to-gray-50 dark:to-gray-900 opacity-30 pointer-events-none" />
                   </div>
                 </div>
               </ClientFloatingAnimation>
+              
+              {/* Decorative elements */}
+              <ClientMotion 
+                className="absolute -bottom-4 -right-4 w-16 h-16 opacity-70"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 0.7, scale: 1, rotate: 45 }}
+                transition={{ duration: 1, delay: 1.8 }}
+              >
+                <div className="w-full h-full rounded-lg border-2 border-gray-800 dark:border-gray-200"></div>
+              </ClientMotion>
+              
+              <ClientMotion 
+                className="absolute -top-4 -left-4 w-12 h-12 opacity-70"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 0.7, scale: 1, rotate: -45 }}
+                transition={{ duration: 1, delay: 2 }}
+              >
+                <div className="w-full h-full rounded-lg border-2 border-gray-800 dark:border-gray-200"></div>
+              </ClientMotion>
             </ClientMotion>
           </div>
         </div>
@@ -115,14 +171,15 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">コミュニティの特典</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <ClientMotion 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
+              whileHover={{ y: -5 }}
             >
               <ClientEnhancedFeatureCard
-                icon={<LightBulbIcon className="h-8 w-8" />}
+                icon={<LightBulbIcon className="h-8 w-8 text-yellow-500" />}
                 title="AI情報の毎日配信"
                 description="最新のAI情報を毎日お届けします。常に最先端の技術動向をキャッチアップできます。"
                 tags={["最新情報", "AI技術", "トレンド"]}
@@ -133,9 +190,10 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
+              whileHover={{ y: -5 }}
             >
               <ClientEnhancedFeatureCard
-                icon={<CalendarIcon className="h-8 w-8" />}
+                icon={<CalendarIcon className="h-8 w-8 text-blue-500" />}
                 title="週1回のAIキャッチアップセッション"
                 description="毎週日曜日に2時間のAI情報キャッチアップセッションを開催。最新トレンドを深掘りします。"
                 tags={["毎週日曜日", "2時間", "ライブ配信"]}
@@ -146,9 +204,10 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
+              whileHover={{ y: -5 }}
             >
               <ClientEnhancedFeatureCard
-                icon={<SearchIcon className="h-8 w-8" />}
+                icon={<SearchIcon className="h-8 w-8 text-green-500" />}
                 title="ピタッとAI検索"
                 description="AI情報を能動的または自動的に検索できる独自ツール「ピタッとAI」へのアクセス権が得られます。"
                 tags={["検索ツール", "無制限利用"]}
@@ -170,7 +229,7 @@ export default function Home() {
             </p>
           </div>
           
-          <EnhancedCard className="overflow-hidden glass-card">
+          <ClientEnhancedCard className="overflow-hidden glass-card">
             <div className="border-b border-gray-200 dark:border-gray-800 p-4">
               <h3 className="font-semibold text-lg">最新の開発状況</h3>
             </div>
@@ -214,7 +273,7 @@ export default function Home() {
                 最終更新: 2025年3月14日
               </p>
             </div>
-          </EnhancedCard>
+          </ClientEnhancedCard>
         </div>
       </section>
 

@@ -125,7 +125,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .notion-tag {
-  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200;
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-all duration-200;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .notion-divider {
@@ -266,11 +267,21 @@ h1, h2, h3, h4, h5, h6 {
 .card-3d {
   transform-style: preserve-3d;
   perspective: 1000px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.card-3d:hover {
+  transform: translateY(-5px) rotateX(5deg) rotateY(5deg);
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
 }
 
 .card-3d-inner {
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
   transform: rotateX(0) rotateY(0);
+}
+
+.card-3d:hover .card-3d-inner {
+  transform: translateZ(30px);
 }
 
 /* Shimmer Effect */

@@ -15,19 +15,25 @@ export function ClientHeader() {
     <header className="py-4 border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50 bg-white/90 dark:bg-black/90 backdrop-blur-sm">
       <div className="max-w-5xl mx-auto px-4">
         <div className="flex justify-between items-center">
-          <motion.h1 
-            className="font-bold text-xl md:text-2xl"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
+            whileHover={{ scale: 1.03 }}
           >
-            AIで遊ぼうコミュニティー
-          </motion.h1>
+            <Link href="/" className="block">
+              <h1 className="font-bold text-xl md:text-2xl bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-300 bg-clip-text text-transparent">
+                AIで遊ぼうコミュニティー
+              </h1>
+            </Link>
+          </motion.div>
           
-          <button 
+          <motion.button 
             className="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             onClick={toggleMenu}
             aria-label={isMenuOpen ? "メニューを閉じる" : "メニューを開く"}
+            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.1 }}
           >
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
@@ -53,45 +59,15 @@ export function ClientHeader() {
                 </>
               )}
             </svg>
-          </button>
+          </motion.button>
           
           <nav className="hidden md:block">
             <ul className="flex space-x-6">
-              <motion.li 
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-              >
-                <a href="#features" className="hover:underline">特典</a>
-              </motion.li>
-              <motion.li 
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                <a href="#pricing" className="hover:underline">料金</a>
-              </motion.li>
-              <motion.li 
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-              >
-                <Link href="/terms" className="hover:underline">利用規約</Link>
-              </motion.li>
-              <motion.li 
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-              >
-                <Link href="/tokushoho" className="hover:underline">特定商取引法</Link>
-              </motion.li>
-              <motion.li 
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-              >
-                <a href="#contact" className="hover:underline">お問い合わせ</a>
-              </motion.li>
+              <NavItem href="#features" delay={0.1}>特典</NavItem>
+              <NavItem href="#pricing" delay={0.2}>料金</NavItem>
+              <NavItem href="/terms" delay={0.3} isLink>利用規約</NavItem>
+              <NavItem href="/tokushoho" delay={0.4} isLink>特定商取引法</NavItem>
+              <NavItem href="#contact" delay={0.5}>お問い合わせ</NavItem>
             </ul>
           </nav>
         </div>
@@ -128,6 +104,44 @@ export function ClientHeader() {
     </header>
   );
 }
+
+const NavItem = ({ 
+  children, 
+  href, 
+  delay = 0,
+  isLink = false 
+}: { 
+  children: React.ReactNode; 
+  href: string;
+  delay?: number;
+  isLink?: boolean;
+}) => {
+  return (
+    <motion.li 
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay }}
+    >
+      {isLink ? (
+        <Link href={href} className="relative group">
+          <span className="block">{children}</span>
+          <motion.span 
+            className="absolute bottom-0 left-0 w-0 h-0.5 bg-black dark:bg-white group-hover:w-full transition-all duration-300"
+            whileHover={{ width: '100%' }}
+          />
+        </Link>
+      ) : (
+        <a href={href} className="relative group">
+          <span className="block">{children}</span>
+          <motion.span 
+            className="absolute bottom-0 left-0 w-0 h-0.5 bg-black dark:bg-white group-hover:w-full transition-all duration-300"
+            whileHover={{ width: '100%' }}
+          />
+        </a>
+      )}
+    </motion.li>
+  );
+};
 
 const MenuItem = ({ 
   children, 

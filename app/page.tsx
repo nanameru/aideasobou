@@ -115,34 +115,46 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">コミュニティの特典</h2>
           
-          <StaggerChildren containerClassName="grid grid-cols-1 md:grid-cols-3 gap-8" staggerDelay={0.15}>
-            <HoverScale>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <ClientMotion 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
               <ClientEnhancedFeatureCard
                 icon={<LightBulbIcon className="h-8 w-8" />}
                 title="AI情報の毎日配信"
                 description="最新のAI情報を毎日お届けします。常に最先端の技術動向をキャッチアップできます。"
                 tags={["最新情報", "AI技術", "トレンド"]}
               />
-            </HoverScale>
+            </ClientMotion>
             
-            <HoverScale>
+            <ClientMotion 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               <ClientEnhancedFeatureCard
                 icon={<CalendarIcon className="h-8 w-8" />}
                 title="週1回のAIキャッチアップセッション"
                 description="毎週日曜日に2時間のAI情報キャッチアップセッションを開催。最新トレンドを深掘りします。"
                 tags={["毎週日曜日", "2時間", "ライブ配信"]}
               />
-            </HoverScale>
+            </ClientMotion>
             
-            <HoverScale>
+            <ClientMotion 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
               <ClientEnhancedFeatureCard
                 icon={<SearchIcon className="h-8 w-8" />}
                 title="ピタッとAI検索"
                 description="AI情報を能動的または自動的に検索できる独自ツール「ピタッとAI」へのアクセス権が得られます。"
                 tags={["検索ツール", "無制限利用"]}
               />
-            </HoverScale>
-          </StaggerChildren>
+            </ClientMotion>
+          </div>
         </div>
       </section>
 

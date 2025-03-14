@@ -84,13 +84,15 @@ export default function Home() {
                 </ClientEnhancedButton>
               </ClientMotion>
               
-              {/* Mobile AI Network Visualization - only visible on mobile */}
-              <MobileAINetwork />
+              {/* Mobile AI Network Visualization - only visible on small mobile devices */}
+              <div className="block sm:hidden">
+                <MobileAINetwork />
+              </div>
             </div>
             
             {/* Right content - AI Network Visualization */}
             <ClientMotion 
-              className="relative h-[400px] hidden md:block"
+              className="relative h-[300px] sm:h-[350px] md:h-[400px]"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -113,26 +115,44 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-12 text-center">コミュニティの特典</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <ClientEnhancedFeatureCard
-              icon={<LightBulbIcon className="h-8 w-8" />}
-              title="AI情報の毎日配信"
-              description="最新のAI情報を毎日お届けします。常に最先端の技術動向をキャッチアップできます。"
-              tags={["最新情報", "AI技術", "トレンド"]}
-            />
+            <ClientMotion 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <ClientEnhancedFeatureCard
+                icon={<LightBulbIcon className="h-8 w-8" />}
+                title="AI情報の毎日配信"
+                description="最新のAI情報を毎日お届けします。常に最先端の技術動向をキャッチアップできます。"
+                tags={["最新情報", "AI技術", "トレンド"]}
+              />
+            </ClientMotion>
             
-            <ClientEnhancedFeatureCard
-              icon={<CalendarIcon className="h-8 w-8" />}
-              title="週1回のAIキャッチアップセッション"
-              description="毎週日曜日に2時間のAI情報キャッチアップセッションを開催。最新トレンドを深掘りします。"
-              tags={["毎週日曜日", "2時間", "ライブ配信"]}
-            />
+            <ClientMotion 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <ClientEnhancedFeatureCard
+                icon={<CalendarIcon className="h-8 w-8" />}
+                title="週1回のAIキャッチアップセッション"
+                description="毎週日曜日に2時間のAI情報キャッチアップセッションを開催。最新トレンドを深掘りします。"
+                tags={["毎週日曜日", "2時間", "ライブ配信"]}
+              />
+            </ClientMotion>
             
-            <ClientEnhancedFeatureCard
-              icon={<SearchIcon className="h-8 w-8" />}
-              title="ピタッとAI検索"
-              description="AI情報を能動的または自動的に検索できる独自ツール「ピタッとAI」へのアクセス権が得られます。"
-              tags={["検索ツール", "無制限利用"]}
-            />
+            <ClientMotion 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <ClientEnhancedFeatureCard
+                icon={<SearchIcon className="h-8 w-8" />}
+                title="ピタッとAI検索"
+                description="AI情報を能動的または自動的に検索できる独自ツール「ピタッとAI」へのアクセス権が得られます。"
+                tags={["検索ツール", "無制限利用"]}
+              />
+            </ClientMotion>
           </div>
         </div>
       </section>
@@ -203,19 +223,30 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-12 text-center">料金プラン</h2>
           
           <div className="max-w-md mx-auto">
-            <ClientPricingCard
-              title="メンバーシップ"
-              price="¥3,000"
-              period="月額サブスクリプション"
-              features={[
-                "AI情報の毎日配信",
-                "週1回のAIキャッチアップセッション（日曜日2時間）",
-                "「ピタッとAI」検索ツールの無制限利用",
-                "開発中のAIサービスへの早期アクセス"
-              ]}
-              ctaText="今すぐ参加する"
-              ctaLink="#"
-            />
+            <ClientMotion
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ 
+                duration: 0.8, 
+                delay: 0.2,
+                type: "spring",
+                stiffness: 100
+              }}
+            >
+              <ClientPricingCard
+                title="メンバーシップ"
+                price="¥3,000"
+                period="月額サブスクリプション"
+                features={[
+                  "AI情報の毎日配信",
+                  "週1回のAIキャッチアップセッション（日曜日2時間）",
+                  "「ピタッとAI」検索ツールの無制限利用",
+                  "開発中のAIサービスへの早期アクセス"
+                ]}
+                ctaText="今すぐ参加する"
+                ctaLink="#"
+              />
+            </ClientMotion>
           </div>
         </div>
       </section>

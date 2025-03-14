@@ -22,13 +22,16 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, sans-serif);
   line-height: 1.5;
   letter-spacing: -0.011em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 /* Notion-like UI Components */
@@ -45,16 +48,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .notion-card {
-  @apply border border-gray-200 dark:border-gray-800 rounded-lg p-6 transition-all;
+  @apply border border-gray-200 dark:border-gray-800 rounded-lg p-6 sm:p-8 transition-all;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px;
 }
 
 .notion-card:hover {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transform: translateY(-1px);
 }
 
 .notion-button {
-  @apply bg-black text-white dark:bg-white dark:text-black px-6 py-3 rounded-md font-medium transition-all;
+  @apply bg-black text-white dark:bg-white dark:text-black px-6 py-3 rounded-md font-medium transition-all inline-flex items-center;
 }
 
 .notion-button:hover {
@@ -63,8 +67,37 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
+.notion-secondary-button {
+  @apply bg-transparent border border-gray-200 dark:border-gray-800 text-gray-800 dark:text-gray-200 px-6 py-3 rounded-md font-medium transition-all inline-flex items-center;
+}
+
+.notion-secondary-button:hover {
+  @apply bg-gray-50 dark:bg-gray-900;
+}
+
 .notion-section {
-  @apply py-12 sm:py-16;
+  @apply py-16 sm:py-20;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.notion-section:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.notion-section:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.notion-section:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.notion-section:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.notion-like {
+  @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
 /* Enhanced Notion-like UI */

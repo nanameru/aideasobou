@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import { ArrowRightIcon, CheckIcon, LightBulbIcon, CalendarIcon, SearchIcon } from './components/ui/icons';
+import { GoogleFormButton } from './components/client/google-form-button';
 
 export default function Home() {
-  // Google Form URL for community sign-up
+  // Google Form URL for community sign-up - hardcoded for production reliability
   const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/1UICzT0z-bjUoNiGjF0NFufGG7G8laBNPNHIaaoUxd4k/edit";
   
   return (
@@ -78,19 +79,11 @@ export default function Home() {
               
               <div className="relative">
                 {/* Enhanced CTA button with glow effect */}
-                <a 
-                  href={GOOGLE_FORM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <GoogleFormButton 
                   className="px-8 py-4 text-lg bg-black text-white dark:bg-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors rounded-lg shadow-lg hover:shadow-xl relative z-10 inline-block enhanced-button"
                 >
-                  <span className="flex items-center">
-                    今すぐ参加する
-                    <span className="ml-2 inline-flex">
-                      <ArrowRightIcon className="w-5 h-5" />
-                    </span>
-                  </span>
-                </a>
+                  今すぐ参加する
+                </GoogleFormButton>
               </div>
             </div>
             
@@ -238,10 +231,7 @@ export default function Home() {
                 ))}
               </ul>
               
-              <a 
-                href={GOOGLE_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <GoogleFormButton 
                 className="notion-button w-full text-center flex items-center justify-center text-base"
               >
                 今すぐ参加する
@@ -260,7 +250,7 @@ export default function Home() {
                   <path d="M5 12h14" />
                   <path d="m12 5 7 7-7 7" />
                 </svg>
-              </a>
+              </GoogleFormButton>
             </div>
           </div>
         </div>

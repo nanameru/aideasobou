@@ -34,23 +34,23 @@ export default function TokushohoPage() {
                   <table className="w-full border-collapse">
                     <tbody>
                       <tr className="border-b border-gray-200 dark:border-gray-800">
-                        <th className="py-4 pr-4 text-left align-top w-1/3">事業者名（法人名）</th>
+                        <th className="py-4 pr-4 text-left align-top w-1/3">販売業者の名称</th>
                         <td className="py-4">AIで遊ぼうコミュニティー</td>
                       </tr>
                       <tr className="border-b border-gray-200 dark:border-gray-800">
-                        <th className="py-4 pr-4 text-left align-top">運営責任者</th>
+                        <th className="py-4 pr-4 text-left align-top">運営統括責任者</th>
                         <td className="py-4">木村 太陽</td>
                       </tr>
                       <tr className="border-b border-gray-200 dark:border-gray-800">
                         <th className="py-4 pr-4 text-left align-top">所在地</th>
                         <td className="py-4">
-                          <p>お問い合わせいただければ遅滞なく開示いたします。</p>
+                          <p>請求があったら遅滞なく開示します</p>
                         </td>
                       </tr>
                       <tr className="border-b border-gray-200 dark:border-gray-800">
                         <th className="py-4 pr-4 text-left align-top">電話番号</th>
                         <td className="py-4">
-                          <p>お問い合わせいただければ遅滞なく開示いたします。</p>
+                          <p>請求があったら遅滞なく開示します</p>
                         </td>
                       </tr>
                       <tr className="border-b border-gray-200 dark:border-gray-800">
@@ -88,7 +88,7 @@ export default function TokushohoPage() {
                         <td className="py-4">3,000円（税込）／月額サブスクリプション</td>
                       </tr>
                       <tr className="border-b border-gray-200 dark:border-gray-800">
-                        <th className="py-4 pr-4 text-left align-top">その他の費用</th>
+                        <th className="py-4 pr-4 text-left align-top">追加手数料等</th>
                         <td className="py-4">
                           <p>サービス利用に必要なインターネット接続料金、通信料金等はお客様のご負担となります。</p>
                         </td>
@@ -102,13 +102,13 @@ export default function TokushohoPage() {
                   <table className="w-full border-collapse">
                     <tbody>
                       <tr className="border-b border-gray-200 dark:border-gray-800">
-                        <th className="py-4 pr-4 text-left align-top w-1/3">支払方法</th>
+                        <th className="py-4 pr-4 text-left align-top w-1/3">受け付け可能な決済手段</th>
                         <td className="py-4">クレジットカード決済（Stripe）</td>
                       </tr>
                       <tr className="border-b border-gray-200 dark:border-gray-800">
-                        <th className="py-4 pr-4 text-left align-top">支払時期</th>
+                        <th className="py-4 pr-4 text-left align-top">決済期間</th>
                         <td className="py-4">
-                          <p>クレジットカード決済は即時に処理されます。</p>
+                          <p>クレジットカード決済はただちに処理されます。</p>
                           <p>初回決済後は、毎月同日に自動的に決済が行われます。</p>
                         </td>
                       </tr>
@@ -117,13 +117,13 @@ export default function TokushohoPage() {
                 </div>
 
                 <div className="notion-card mb-10 p-8 rounded-xl">
-                  <h3 className="text-2xl font-semibold mb-6">サービス提供時期</h3>
+                  <h3 className="text-2xl font-semibold mb-6">引渡時期</h3>
                   <table className="w-full border-collapse">
                     <tbody>
                       <tr className="border-b border-gray-200 dark:border-gray-800">
-                        <th className="py-4 pr-4 text-left align-top w-1/3">提供時期</th>
+                        <th className="py-4 pr-4 text-left align-top w-1/3">引渡時期</th>
                         <td className="py-4">
-                          <p>お申込み完了後、即時にサービス提供を開始いたします。</p>
+                          <p>お申込み完了後、すぐにご利用いただけます。</p>
                           <p>AIキャッチアップセッションは毎週日曜日に開催されます。</p>
                         </td>
                       </tr>
@@ -132,17 +132,17 @@ export default function TokushohoPage() {
                 </div>
 
                 <div className="notion-card mb-10 p-8 rounded-xl">
-                  <h3 className="text-2xl font-semibold mb-6">返品・交換・キャンセルについて</h3>
+                  <h3 className="text-2xl font-semibold mb-6">交換および返品（返金ポリシー）</h3>
                   <table className="w-full border-collapse">
                     <tbody>
                       <tr className="border-b border-gray-200 dark:border-gray-800">
-                        <th className="py-4 pr-4 text-left align-top w-1/3">サービスに不具合があった場合</th>
+                        <th className="py-4 pr-4 text-left align-top w-1/3">サービスに不備がある場合</th>
                         <td className="py-4">
-                          <p>サービスに不具合があった場合は、メールアドレス（4869nanataitai@gmail.com）までご連絡ください。状況を確認の上、適切に対応いたします。状況によっては返金対応も検討いたします。</p>
+                          <p>サービスに不備がある場合は、メールアドレス（4869nanataitai@gmail.com）までご連絡ください。状況を確認の上、適切に対応いたします。状況によっては返金対応も検討いたします。</p>
                         </td>
                       </tr>
                       <tr className="border-b border-gray-200 dark:border-gray-800">
-                        <th className="py-4 pr-4 text-left align-top">お客様都合による解約・返金</th>
+                        <th className="py-4 pr-4 text-left align-top">お客様都合の場合</th>
                         <td className="py-4">
                           <ul className="list-disc pl-6 space-y-2">
                             <li>サブスクリプションは月単位での課金となり、解約時点で日割り計算での返金はいたしません。</li>
@@ -160,7 +160,7 @@ export default function TokushohoPage() {
                   <table className="w-full border-collapse">
                     <tbody>
                       <tr className="border-b border-gray-200 dark:border-gray-800">
-                        <th className="py-4 pr-4 text-left align-top w-1/3">動作環境</th>
+                        <th className="py-4 pr-4 text-left align-top w-1/3">ソフトウェアの動作環境</th>
                         <td className="py-4">
                           <p>本サービスは以下の環境での利用を推奨します：</p>
                           <ul className="list-disc pl-6 space-y-2 mt-2">
@@ -183,6 +183,18 @@ export default function TokushohoPage() {
                         <th className="py-4 pr-4 text-left align-top">免責事項</th>
                         <td className="py-4">
                           <p>本サービスで提供される情報は、情報提供を目的としており、投資・ビジネス判断の根拠として利用される場合、利用者自身の責任において行ってください。</p>
+                        </td>
+                      </tr>
+                      <tr className="border-b border-gray-200 dark:border-gray-800">
+                        <th className="py-4 pr-4 text-left align-top">販売数量の制限</th>
+                        <td className="py-4">
+                          <p>特に制限はございません。</p>
+                        </td>
+                      </tr>
+                      <tr className="border-b border-gray-200 dark:border-gray-800">
+                        <th className="py-4 pr-4 text-left align-top">申込み期間の制限</th>
+                        <td className="py-4">
+                          <p>特に制限はございません。いつでもお申し込みいただけます。</p>
                         </td>
                       </tr>
                     </tbody>

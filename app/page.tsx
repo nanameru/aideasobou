@@ -3,7 +3,7 @@ import { ArrowRightIcon, CheckIcon, LightBulbIcon, CalendarIcon, SearchIcon } fr
 
 export default function Home() {
   // Google Form URL for community sign-up
-  const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/1UICzT0z-bjUoNiGjF0NFufGG7G8laBNPNHIaaoUxd4k/edit";
+  const GOOGLE_FORM_URL = process.env.NEXT_PUBLIC_GOOGLE_FORM_URL || "https://docs.google.com/forms/d/1UICzT0z-bjUoNiGjF0NFufGG7G8laBNPNHIaaoUxd4k/edit";
   
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white">

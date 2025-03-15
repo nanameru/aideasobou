@@ -2,7 +2,7 @@ name: Build and Test
 
 on:
   push:
-    branches: [ "devin/1741937719-design-enhancement" ]
+    branches: [ "main" ]
   workflow_dispatch:
 
 jobs:

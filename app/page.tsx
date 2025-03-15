@@ -1,236 +1,461 @@
 import Link from 'next/link';
-import { LightBulbIcon, CalendarIcon, SearchIcon, ArrowRightIcon, CheckIcon } from './components/ui/icons';
+import { 
+  ClientAnimatedText, 
+  ClientFloatingAnimation,
+  ClientMotion,
+  ClientPulseAnimation,
+  ClientGlowingText
+} from './components/client/motion-wrapper';
+import { motion } from 'framer-motion';
+import { 
+  ClientAINetworkAnimation, 
+  ClientCircuitPattern,
+  ClientParticleBackground
+} from './components/client/ai-network-client';
+import { ClientHeader } from './components/client/header-client';
+import { ClientFooter } from './components/client/footer-client';
+import { MobileAINetwork } from './components/client/mobile-ai-network';
+import { ClientGradientBackground } from './components/client/gradient-background-client';
+import { 
+  ClientEnhancedFeatureCard,
+  ClientEnhancedButton,
+  ClientPricingCard
+} from './components/client/feature-card-client';
+import { ArrowRightIcon, CheckIcon, LightBulbIcon, CalendarIcon, SearchIcon } from './components/ui/icons';
+import { StaggerChildren, HoverScale } from './components/client/stagger-children';
+import { ClientEnhancedCard } from './components/client/feature-card-client';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
       {/* Header */}
-      <header className="notion-nav sticky top-0 z-10 backdrop-blur-sm bg-white/90 dark:bg-black/90">
-        <div className="notion-like py-4">
-          <div className="flex flex-col sm:flex-row justify-between items-center">
-            <h1 className="font-bold text-xl tracking-tight mb-4 sm:mb-0">AIで遊ぼうコミュニティー</h1>
-            <nav className="flex flex-wrap justify-center items-center gap-4 sm:gap-6">
-              <Link href="#features" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
-                特典
-              </Link>
-              <Link href="#pricing" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
-                料金
-              </Link>
-              <Link href="/stripe" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
-                Stripe要件
-              </Link>
-              <a href="#join" className="notion-button">参加する</a>
-            </nav>
-          </div>
-        </div>
-      </header>
+      <ClientHeader />
 
       {/* Hero Section */}
-      <section className="notion-section py-12 sm:py-20 md:py-24">
-        <div className="notion-like">
-          <div className="w-full max-w-3xl mx-auto text-center">
-            <div className="mb-10 bg-gray-100 dark:bg-gray-800 p-5 rounded-full inline-block">
-              <LightBulbIcon className="w-12 h-12 text-gray-800 dark:text-gray-200" />
+      <section className="py-12 md:py-20 relative overflow-hidden min-h-[90vh] flex items-center">
+        {/* Dynamic background elements */}
+        <ClientGradientBackground />
+        <div className="absolute inset-0 z-0 opacity-30">
+          <ClientCircuitPattern />
+        </div>
+        <ClientParticleBackground />
+        
+        {/* Enhanced decorative elements with gradients */}
+        <div className="absolute top-20 right-10 w-24 h-24 bg-gradient-to-br from-gray-200 to-transparent rounded-full opacity-30 blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 left-10 w-36 h-36 bg-gradient-to-tr from-gray-200 to-transparent rounded-full opacity-30 blur-xl animate-pulse"></div>
+        <div className="absolute top-1/3 left-1/4 w-48 h-48 bg-gradient-to-r from-gray-100 to-transparent rounded-full opacity-10 blur-2xl"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-gradient-to-l from-gray-100 to-transparent rounded-full opacity-10 blur-2xl"></div>
+        
+        {/* Animated decorative elements */}
+        <ClientMotion 
+          className="absolute top-20 right-10 w-24 h-24 md:w-32 md:h-32 opacity-20 hidden md:block"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 0.2, scale: 1, rotate: 180 }}
+          transition={{ duration: 1.5, delay: 1.2 }}
+        >
+          <div className="w-full h-full rounded-full border-4 border-gray-800 dark:border-gray-200"></div>
+        </ClientMotion>
+        
+        <ClientMotion 
+          className="absolute bottom-20 left-10 w-16 h-16 md:w-24 md:h-24 opacity-20 hidden md:block"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 0.2, scale: 1, rotate: -90 }}
+          transition={{ duration: 1.5, delay: 1.5 }}
+        >
+          <div className="w-full h-full rounded-full border-4 border-gray-800 dark:border-gray-200"></div>
+        </ClientMotion>
+        
+        {/* Additional animated decorative elements */}
+        <ClientMotion 
+          className="absolute top-1/2 left-1/4 w-12 h-12 md:w-16 md:h-16 opacity-10 hidden md:block"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ 
+            opacity: [0.1, 0.2, 0.1],
+            scale: [1, 1.2, 1],
+            rotate: [0, 45, 0]
+          }}
+          transition={{ 
+            duration: 8, 
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <div className="w-full h-full rounded-md border-2 border-gray-800 dark:border-gray-200"></div>
+        </ClientMotion>
+        
+        <ClientMotion 
+          className="absolute bottom-1/3 right-1/4 w-10 h-10 md:w-14 md:h-14 opacity-10 hidden md:block"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ 
+            opacity: [0.1, 0.2, 0.1],
+            scale: [1, 1.1, 1],
+            rotate: [0, -30, 0]
+          }}
+          transition={{ 
+            duration: 6, 
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+        >
+          <div className="w-full h-full rounded-md border-2 border-gray-800 dark:border-gray-200"></div>
+        </ClientMotion>
+        
+        <div className="max-w-5xl mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            {/* Left content */}
+            <div className="text-left">
+              <div className="mb-8 relative">
+                {/* Enhanced badge with glow effect */}
+                <ClientMotion 
+                  className="inline-block bg-black dark:bg-white text-white dark:text-black px-4 py-2 rounded-lg text-sm font-medium mb-6 relative z-10 shadow-lg"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  whileHover={{ 
+                    scale: 1.05, 
+                    boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.2)"
+                  }}
+                >
+                  <span className="relative z-10">AIの可能性を一緒に探求しよう</span>
+                  <ClientMotion 
+                    className="absolute inset-0 bg-black dark:bg-white rounded-lg opacity-0 blur-md"
+                    animate={{ 
+                      opacity: [0, 0.3, 0],
+                      scale: [0.8, 1.1, 0.8]
+                    }}
+                    transition={{ 
+                      duration: 3, 
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  ><div className="w-full h-full"></div></ClientMotion>
+                </ClientMotion>
+                
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-tight relative">
+                  <ClientAnimatedText 
+                    text="AIで遊ぼう" 
+                    className="block mb-2 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-300 bg-clip-text text-transparent shimmer"
+                  />
+                  <ClientAnimatedText 
+                    text="コミュニティー" 
+                    className="block bg-gradient-to-r from-gray-600 to-gray-900 dark:from-gray-300 dark:to-gray-100 bg-clip-text text-transparent shimmer"
+                  />
+                  
+                  {/* Decorative underline */}
+                  <ClientMotion 
+                    className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-300 rounded-full"
+                    initial={{ width: "0%" }}
+                    animate={{ width: "100%" }}
+                    transition={{ duration: 1.2, delay: 1.5 }}
+                  ><div className="w-full h-full"></div></ClientMotion>
+                </h2>
+              </div>
+              
+              <ClientMotion 
+                className="text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+              >
+                最新のAI情報をキャッチアップし、AIの可能性を一緒に探求するコミュニティです。
+                <span className="block mt-4">日々進化するAI技術を楽しく学び、活用していきましょう。</span>
+              </ClientMotion>
+              
+              <ClientMotion
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1 }}
+                className="relative"
+              >
+                {/* Enhanced CTA button with glow effect */}
+                <ClientEnhancedButton className="px-8 py-4 text-lg bg-black text-white dark:bg-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors rounded-lg shadow-lg hover:shadow-xl relative z-10">
+                  <span className="flex items-center">
+                    今すぐ参加する
+                    <ClientFloatingAnimation 
+                      className="ml-2 inline-flex" 
+                      duration={1.5}
+                    >
+                      <ArrowRightIcon className="w-5 h-5" />
+                    </ClientFloatingAnimation>
+                  </span>
+                </ClientEnhancedButton>
+                
+                {/* Button glow effect */}
+                <ClientMotion 
+                  className="absolute inset-0 bg-black dark:bg-white rounded-lg blur-xl opacity-0 z-0"
+                  animate={{ 
+                    opacity: [0, 0.15, 0],
+                    scale: [0.8, 1.15, 0.8]
+                  }}
+                  transition={{ 
+                    duration: 3, 
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                ><div className="w-full h-full"></div></ClientMotion>
+              </ClientMotion>
+              
+              {/* Mobile AI Network Visualization - only visible on small mobile devices */}
+              <div className="block sm:hidden">
+                <MobileAINetwork />
+              </div>
             </div>
-            <h2 className="notion-heading mb-8 text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">AIで遊ぼうコミュニティー</h2>
-            <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-400 mb-10 leading-relaxed max-w-2xl mx-auto">
-              最新のAI情報をキャッチアップし、AIの可能性を一緒に探求するコミュニティです。
-              <span className="block mt-4">日々進化するAI技術を楽しく学び、活用していきましょう。</span>
-            </p>
-            <div className="mt-10">
-              <a href="#join" className="notion-button text-base">
-                今すぐ参加する
-                <ArrowRightIcon className="ml-2 w-5 h-5" />
-              </a>
-            </div>
+            
+            {/* Right content - AI Network Visualization */}
+            <ClientMotion 
+              className="relative h-[300px] sm:h-[350px] md:h-[400px]"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <ClientFloatingAnimation className="w-full h-full">
+                <div className="relative w-full h-full bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 shadow-xl overflow-hidden card-3d">
+                  <div className="card-3d-inner">
+                    <ClientAINetworkAnimation />
+                    <div className="absolute inset-0 bg-gradient-radial from-transparent to-gray-50 dark:to-gray-900 opacity-30 pointer-events-none" />
+                  </div>
+                </div>
+              </ClientFloatingAnimation>
+              
+              {/* Decorative elements */}
+              <ClientMotion 
+                className="absolute -bottom-4 -right-4 w-16 h-16 opacity-70"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 0.7, scale: 1, rotate: 45 }}
+                transition={{ duration: 1, delay: 1.8 }}
+              >
+                <div className="w-full h-full rounded-lg border-2 border-gray-800 dark:border-gray-200"></div>
+              </ClientMotion>
+              
+              <ClientMotion 
+                className="absolute -top-4 -left-4 w-12 h-12 opacity-70"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 0.7, scale: 1, rotate: -45 }}
+                transition={{ duration: 1, delay: 2 }}
+              >
+                <div className="w-full h-full rounded-lg border-2 border-gray-800 dark:border-gray-200"></div>
+              </ClientMotion>
+            </ClientMotion>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="notion-section bg-gray-50 dark:bg-gray-900">
-        <div className="notion-like">
-          <div className="w-full max-w-3xl mx-auto">
-            <h2 className="notion-subheading text-center mb-12">コミュニティの特典</h2>
-            <div className="grid grid-cols-1 gap-8">
-              <div className="notion-feature-card flex flex-col md:flex-row items-start gap-6 md:gap-8 bg-white dark:bg-black p-6 md:p-8 rounded-lg">
-                <div className="flex-shrink-0 bg-gray-50 dark:bg-gray-900 p-4 rounded-lg mb-4 md:mb-0">
-                  <LightBulbIcon className="w-8 h-8 text-gray-800 dark:text-gray-200" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-xl mb-4 tracking-tight">AI情報の毎日配信</h3>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    最新のAI情報を毎日お届けします。常に最先端の技術動向をキャッチアップできます。AIの進化や新しいツールの登場、活用事例など、幅広い情報を厳選してお届けします。
-                  </p>
-                </div>
-              </div>
-              
-              <div className="notion-feature-card flex flex-col md:flex-row items-start gap-6 md:gap-8 bg-white dark:bg-black p-6 md:p-8 rounded-lg">
-                <div className="flex-shrink-0 bg-gray-50 dark:bg-gray-900 p-4 rounded-lg mb-4 md:mb-0">
-                  <CalendarIcon className="w-8 h-8 text-gray-800 dark:text-gray-200" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-xl mb-4 tracking-tight">週1回のAIキャッチアップセッション</h3>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    毎週日曜日に2時間のAI情報キャッチアップセッションを開催。最新トレンドを深掘りします。専門家による解説や質疑応答の時間もあり、AIへの理解を深めることができます。
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    <span className="notion-tag">毎週日曜日</span>
-                    <span className="notion-tag">2時間</span>
-                    <span className="notion-tag">ライブ配信</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="notion-feature-card flex flex-col md:flex-row items-start gap-6 md:gap-8 bg-white dark:bg-black p-6 md:p-8 rounded-lg">
-                <div className="flex-shrink-0 bg-gray-50 dark:bg-gray-900 p-4 rounded-lg mb-4 md:mb-0">
-                  <SearchIcon className="w-8 h-8 text-gray-800 dark:text-gray-200" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-xl mb-4 tracking-tight">ピタッとAI検索</h3>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    AI情報を能動的または自動的に検索できる独自ツール「ピタッとAI」へのアクセス権が得られます。膨大なAI情報の中から、あなたに必要な情報だけをピンポイントで見つけ出します。
-                  </p>
-                  <div className="notion-callout mt-6 bg-gray-50 dark:bg-gray-900 border-l-4 border-gray-300 dark:border-gray-700 p-4 rounded-r-md">
-                    <p className="text-sm text-gray-600 dark:text-gray-400">「ピタッとAI」は現在ベータ版ですが、コミュニティメンバーは無制限で利用できます。</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <section id="features" className="py-20 bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center">コミュニティの特典</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            <ClientMotion 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              whileHover={{ y: -5 }}
+            >
+              <ClientEnhancedFeatureCard
+                icon={<LightBulbIcon className="h-8 w-8 text-yellow-500" />}
+                title="AI情報の毎日配信"
+                description="最新のAI情報を毎日お届けします。常に最先端の技術動向をキャッチアップできます。"
+                tags={["最新情報", "AI技術", "トレンド"]}
+              />
+            </ClientMotion>
+            
+            <ClientMotion 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              whileHover={{ y: -5 }}
+            >
+              <ClientEnhancedFeatureCard
+                icon={<CalendarIcon className="h-8 w-8 text-blue-500" />}
+                title="週1回のAIキャッチアップセッション"
+                description="毎週日曜日に2時間のAI情報キャッチアップセッションを開催。最新トレンドを深掘りします。"
+                tags={["毎週日曜日", "2時間", "ライブ配信"]}
+              />
+            </ClientMotion>
+            
+            <ClientMotion 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              whileHover={{ y: -5 }}
+            >
+              <ClientEnhancedFeatureCard
+                icon={<SearchIcon className="h-8 w-8 text-green-500" />}
+                title="ピタッとAI検索"
+                description="AI情報を能動的または自動的に検索できる独自ツール「ピタッとAI」へのアクセス権が得られます。"
+                tags={["検索ツール", "無制限利用"]}
+              />
+            </ClientMotion>
           </div>
         </div>
       </section>
 
       {/* App Showcase */}
-      <section className="notion-section">
-        <div className="notion-like">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="notion-subheading text-center mb-8">アプリケーションショーケース</h2>
-            <div className="notion-quote mb-8 max-w-2xl mx-auto">
+      <section className="py-20">
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8 text-center">アプリケーションショーケース</h2>
+          
+          <div className="text-center mb-8 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400">
               コミュニティメンバーは、開発中の最新AIアプリケーションをいち早く体験できます。
               スクリーンショットで公開される最新の開発状況をチェックしましょう。
+            </p>
+          </div>
+          
+          <ClientEnhancedCard className="overflow-hidden glass-card">
+            <div className="border-b border-gray-200 dark:border-gray-800 p-4">
+              <h3 className="font-semibold text-lg">最新の開発状況</h3>
             </div>
             
-            <div className="notion-feature-card bg-white dark:bg-black overflow-hidden">
-              <div className="border-b border-gray-200 dark:border-gray-800 pb-4 mb-4">
-                <h3 className="font-semibold text-lg">最新の開発状況</h3>
-              </div>
-              <div className="border border-gray-200 dark:border-gray-800 rounded-lg p-8 bg-gray-50 dark:bg-gray-900 text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center">
-                  <SearchIcon className="w-8 h-8 text-gray-500 dark:text-gray-400" />
-                </div>
-                <p className="text-gray-500 dark:text-gray-400">
-                  ※ここにアプリケーションのスクリーンショットが定期的に公開されます
+            <div className="m-4 p-8 bg-gray-50 dark:bg-gray-900 text-center relative overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800">
+              <ClientCircuitPattern />
+              
+              <div className="relative z-10">
+                <ClientPulseAnimation className="w-20 h-20 mx-auto mb-6 bg-black dark:bg-white rounded-full flex items-center justify-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-white dark:text-black"
+                  >
+                    <rect width="18" height="18" x="3" y="3" rx="2" />
+                    <path d="M7 7h.01" />
+                    <path d="M12 3v4" />
+                    <path d="M17 7h.01" />
+                    <path d="M12 17v4" />
+                    <path d="M7 17h.01" />
+                    <path d="M17 17h.01" />
+                  </svg>
+                </ClientPulseAnimation>
+                
+                <p className="text-gray-600 dark:text-gray-400 relative z-10 max-w-md mx-auto">
+                  ※ここにアプリケーションのスクリーンショットが定期的に公開されます。
+                  <span className="block mt-2 text-sm">コミュニティメンバーは最新の開発状況をいち早く確認できます。</span>
                 </p>
               </div>
-              <div className="notion-divider"></div>
+            </div>
+            
+            <div className="border-t border-gray-200 dark:border-gray-800 p-4">
               <p className="text-sm text-gray-500 dark:text-gray-400">
-                最終更新: 2025年3月13日
+                最終更新: 2025年3月14日
               </p>
             </div>
-          </div>
+          </ClientEnhancedCard>
         </div>
       </section>
 
       {/* Pricing Section */}
-      <section id="join" className="notion-section bg-gray-50 dark:bg-gray-900">
-        <div className="notion-like">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="notion-subheading text-center mb-12">料金プラン</h2>
-            <div className="max-w-md mx-auto">
-              <div className="notion-feature-card bg-white dark:bg-black p-8 rounded-xl">
-                <div className="text-center">
-                  <div className="w-20 h-20 mx-auto mb-6 bg-black dark:bg-white rounded-full flex items-center justify-center">
-                    <CheckIcon className="w-10 h-10 text-white dark:text-black" />
-                  </div>
-                  <h3 className="font-bold text-2xl mb-3 tracking-tight">メンバーシップ</h3>
-                  <p className="text-4xl font-bold mb-4">¥3,000</p>
-                  <p className="text-gray-600 dark:text-gray-400 mb-8">一括払い</p>
-                </div>
-                <div className="notion-divider"></div>
-                <ul className="space-y-5 mb-8">
-                  <li className="flex items-start">
-                    <CheckIcon className="w-5 h-5 mr-3 text-green-500 flex-shrink-0 mt-1" />
-                    <span className="text-gray-800 dark:text-gray-200">AI情報の毎日配信</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckIcon className="w-5 h-5 mr-3 text-green-500 flex-shrink-0 mt-1" />
-                    <span className="text-gray-800 dark:text-gray-200">週1回のAIキャッチアップセッション（日曜日2時間）</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckIcon className="w-5 h-5 mr-3 text-green-500 flex-shrink-0 mt-1" />
-                    <span className="text-gray-800 dark:text-gray-200">「ピタッとAI」検索ツールの無制限利用</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckIcon className="w-5 h-5 mr-3 text-green-500 flex-shrink-0 mt-1" />
-                    <span className="text-gray-800 dark:text-gray-200">開発中のAIサービスへの早期アクセス</span>
-                  </li>
-                </ul>
-                <a href="#" className="notion-button w-full text-center flex items-center justify-center text-base">
-                  今すぐ参加する
-                  <ArrowRightIcon className="ml-2 w-5 h-5" />
-                </a>
-              </div>
-            </div>
+      <section id="pricing" className="py-20 bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center">料金プラン</h2>
+          
+          <div className="max-w-md mx-auto">
+            <ClientMotion
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ 
+                duration: 0.8, 
+                delay: 0.2,
+                type: "spring",
+                stiffness: 100
+              }}
+            >
+              <ClientPricingCard
+                title="メンバーシップ"
+                price="¥3,000"
+                period="月額サブスクリプション"
+                features={[
+                  "AI情報の毎日配信",
+                  "週1回のAIキャッチアップセッション（日曜日2時間）",
+                  "「ピタッとAI」検索ツールの無制限利用",
+                  "開発中のAIサービスへの早期アクセス"
+                ]}
+                ctaText="今すぐ参加する"
+                ctaLink="#"
+              />
+            </ClientMotion>
           </div>
         </div>
       </section>
 
       {/* Policy Section */}
-      <section className="notion-section bg-white dark:bg-black">
-        <div className="notion-like">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="notion-subheading text-center mb-12">利用規約・ポリシー</h2>
-            
-            <div className="notion-feature-card mb-8 bg-white dark:bg-black p-8 rounded-xl">
-              <h3 className="font-semibold text-xl mb-4 tracking-tight border-b border-gray-200 dark:border-gray-800 pb-4">お問い合わせ</h3>
+      <section id="contact" className="py-20">
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center">利用規約・ポリシー</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white dark:bg-black p-6 sm:p-8 rounded-xl shadow-sm">
+              <h3 className="font-semibold text-xl mb-4 tracking-tight border-b border-gray-200 dark:border-gray-800 pb-4">
+                お問い合わせ
+              </h3>
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                 カスタマーサービスへのお問い合わせは以下の連絡先までお願いします。
               </p>
               <ul className="space-y-3 text-gray-600 dark:text-gray-400">
-                <li className="flex items-center">
-                  <span className="font-medium mr-3">メールアドレス:</span>
-                  <a href="mailto:info@ai-asobou.com" className="notion-link">info@ai-asobou.com</a>
+                <li className="flex flex-col sm:flex-row sm:items-center">
+                  <span className="font-medium mb-1 sm:mb-0 sm:mr-3">メールアドレス:</span>
+                  <a href="mailto:4869nanataitai@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">4869nanataitai@gmail.com</a>
                 </li>
-                <li className="flex items-center">
-                  <span className="font-medium mr-3">お問い合わせフォーム:</span>
-                  <a href="#" className="notion-link">こちら</a>
+                <li className="flex flex-col sm:flex-row sm:items-center">
+                  <span className="font-medium mb-1 sm:mb-0 sm:mr-3">X (Twitter):</span>
+                  <a href="https://x.com/taiyo_ai_gakuse" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">@taiyo_ai_gakuse</a>
                 </li>
               </ul>
             </div>
             
-            <div className="notion-feature-card mb-8 bg-white dark:bg-black p-8 rounded-xl">
-              <h3 className="font-semibold text-xl mb-4 tracking-tight border-b border-gray-200 dark:border-gray-800 pb-4">返金ポリシー</h3>
+            <div className="bg-white dark:bg-black p-6 sm:p-8 rounded-xl shadow-sm">
+              <h3 className="font-semibold text-xl mb-4 tracking-tight border-b border-gray-200 dark:border-gray-800 pb-4">
+                返金ポリシー
+              </h3>
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                 当コミュニティは以下の返金ポリシーを設けています：
               </p>
               <ul className="space-y-4 text-gray-600 dark:text-gray-400">
-                <li className="flex items-start">
-                  <CheckIcon className="w-5 h-5 mr-3 text-gray-500 flex-shrink-0 mt-1" />
-                  <span>お支払い後14日以内であれば、全額返金いたします。</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckIcon className="w-5 h-5 mr-3 text-gray-500 flex-shrink-0 mt-1" />
-                  <span>14日を過ぎた場合の返金はいたしかねます。</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckIcon className="w-5 h-5 mr-3 text-gray-500 flex-shrink-0 mt-1" />
-                  <span>返金をご希望の場合は、お問い合わせフォームよりご連絡ください。</span>
-                </li>
+                {[
+                  "サブスクリプションは月単位での課金となり、解約時点で日割り計算での返金はいたしません。",
+                  "次回の請求日前にキャンセルされた場合、次回以降の請求は発生しません。",
+                  "サービスに不具合があった場合は、個別にご相談ください。"
+                ].map((item, index) => (
+                  <li 
+                    key={index}
+                    className="flex items-start"
+                  >
+                    <CheckIcon className="h-5 w-5 mr-3 text-gray-500 flex-shrink-0 mt-1" />
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
-            
-            <div className="notion-feature-card bg-white dark:bg-black p-8 rounded-xl">
-              <h3 className="font-semibold text-xl mb-4 tracking-tight border-b border-gray-200 dark:border-gray-800 pb-4">Stripeに関する情報</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                Stripeの決済に関する詳細情報は以下のページでご確認いただけます。
-              </p>
-              <div className="notion-callout mb-6 bg-gray-50 dark:bg-gray-900 border-l-4 border-gray-300 dark:border-gray-700 p-4 rounded-r-md">
-                <p className="text-gray-600 dark:text-gray-400">Stripeを利用した決済には、特定の要件があります。詳細は専用ページをご覧ください。</p>
-              </div>
-              <Link href="/stripe" className="notion-button inline-flex items-center">
+          </div>
+          
+          <div className="mt-12 bg-white dark:bg-black p-6 sm:p-8 rounded-xl shadow-sm">
+            <h3 className="font-semibold text-xl mb-4 tracking-tight border-b border-gray-200 dark:border-gray-800 pb-4">Stripeに関する情報</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+              Stripeの決済に関する詳細情報は以下のページでご確認いただけます。
+            </p>
+            <div className="bg-gray-50 dark:bg-gray-900 border-l-4 border-gray-300 dark:border-gray-700 p-4 rounded-r-md mb-6">
+              <p className="text-gray-600 dark:text-gray-400">Stripeを利用した決済には、特定の要件があります。詳細は専用ページをご覧ください。</p>
+            </div>
+            <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+              <Link href="/stripe" className="inline-flex items-center justify-center bg-black text-white dark:bg-white dark:text-black px-4 py-2 rounded-md hover:opacity-90 transition-opacity">
                 Stripe要件の詳細を見る
-                <ArrowRightIcon className="ml-2 w-5 h-5" />
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </Link>
+              <Link href="/terms" className="inline-flex items-center justify-center bg-gray-200 text-black dark:bg-gray-800 dark:text-white px-4 py-2 rounded-md hover:opacity-90 transition-opacity">
+                利用規約を見る
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
               </Link>
             </div>
           </div>
@@ -238,35 +463,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-200 dark:border-gray-800 py-12 mt-16">
-        <div className="notion-like">
-          <div className="max-w-3xl mx-auto">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <div className="mb-6 md:mb-0">
-                <h2 className="font-bold text-xl mb-4 tracking-tight">AIで遊ぼうコミュニティー</h2>
-                <p className="text-gray-600 dark:text-gray-400">
-                  最新のAI情報をキャッチアップし、AIの可能性を一緒に探求するコミュニティ
-                </p>
-              </div>
-              <div className="flex flex-col space-y-4">
-                <Link href="/stripe" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
-                  Stripe要件
-                </Link>
-                <Link href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
-                  プライバシーポリシー
-                </Link>
-                <Link href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
-                  利用規約
-                </Link>
-              </div>
-            </div>
-            <div className="notion-divider mt-8"></div>
-            <p className="text-gray-600 dark:text-gray-400 text-center">
-              © 2025 AIで遊ぼうコミュニティー. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <ClientFooter />
     </div>
   );
 }

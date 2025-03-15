@@ -79,7 +79,7 @@ export default function Home() {
               <div className="relative">
                 {/* Enhanced CTA button with glow effect */}
                 <a 
-                  href={GOOGLE_FORM_URL}
+                  href="https://docs.google.com/forms/d/1UICzT0z-bjUoNiGjF0NFufGG7G8laBNPNHIaaoUxd4k/edit"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-8 py-4 text-lg bg-black text-white dark:bg-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors rounded-lg shadow-lg hover:shadow-xl relative z-10 inline-block enhanced-button"
@@ -239,7 +239,7 @@ export default function Home() {
               </ul>
               
               <a 
-                href={GOOGLE_FORM_URL}
+                href="https://docs.google.com/forms/d/1UICzT0z-bjUoNiGjF0NFufGG7G8laBNPNHIaaoUxd4k/edit"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="notion-button w-full text-center flex items-center justify-center text-base"

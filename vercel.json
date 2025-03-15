@@ -9,7 +9,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "no-cache, no-store, must-revalidate"
+          "value": "no-cache, no-store, must-revalidate, max-age=0, s-maxage=0"
         },
         {
           "key": "Pragma",
@@ -18,8 +18,29 @@
         {
           "key": "Expires",
           "value": "0"
+        },
+        {
+          "key": "X-Vercel-Cache-Control",
+          "value": "no-cache"
+        },
+        {
+          "key": "Surrogate-Control",
+          "value": "no-store"
+        },
+        {
+          "key": "Cache-Tag",
+          "value": "v1-${now}"
         }
       ]
     }
-  ]
+  ],
+  "github": {
+    "silent": false,
+    "autoAlias": true
+  },
+  "build": {
+    "env": {
+      "NEXT_PUBLIC_BUILD_ID": "${now}"
+    }
+  }
 }

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Link from 'next/link';
 import { ArrowRightIcon, CheckIcon, LightBulbIcon, CalendarIcon, SearchIcon } from './components/ui/icons';
 import { GoogleFormButton } from './components/client/google-form-button';

@@ -245,6 +245,9 @@ export default function TokushohoPage() {
           </div>
         </div>
       </footer>
+      
+      {/* Unique identifier to force cache invalidation */}
+      <div data-version={Date.now()} style={{ display: 'none' }} />
     </div>
   );
 }

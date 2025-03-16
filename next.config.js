@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Vercelでのデプロイに必要な設定
-  // 静的エクスポートを無効化
-  output: 'standalone',
+  // output設定を削除（Vercelのデフォルト設定を使用）
   
   // TypeScriptのコンパイルエラーを無視
   typescript: {

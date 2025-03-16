@@ -1,5 +1,6 @@
 // @ts-nocheck
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRightIcon, CheckIcon, LightBulbIcon, CalendarIcon, SearchIcon } from './components/ui/icons';
 import { GoogleFormButton } from './components/client/google-form-button';
 import { MobileMenu } from './components/client/mobile-menu';
@@ -112,10 +113,13 @@ export default function Home() {
             
             {/* Right content - AI Image */}
             <div className="relative h-[300px] sm:h-[350px] md:h-[400px] rounded-2xl overflow-hidden">
-              <img 
-                src="/images/ai/Generated Image March 16, 2025 - 6_07PM.png.jpeg" 
+              <Image 
+                src="/images/ai/ai-generated-image.jpeg" 
                 alt="AIで生成された画像" 
-                className="w-full h-full object-cover rounded-2xl"
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover rounded-2xl"
               />
             </div>
           </div>

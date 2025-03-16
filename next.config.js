@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Vercelでのデプロイに必要な設定
-  // output設定を削除（Vercelのデフォルト設定を使用）
+  // サーバーサイドレンダリングモードを明示的に指定
+  distDir: '.next',
+  trailingSlash: false,
+  // 静的エクスポートを無効化
+  // output: 'export' は使用しない
   
   // TypeScriptのコンパイルエラーを無視
   typescript: {

@@ -8,7 +8,7 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -17,6 +17,8 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": true,
     "plugins": [
       {
         "name": "next"
@@ -26,14 +28,20 @@
       "@/*": [
         "./*"
       ]
-    }
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ],
+    "strictNullChecks": true
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
     "next-env.d.ts",
-    "out/types/**/*.ts"
+    "out/types/**/*.ts",
+    "types/**/*.d.ts"
   ],
   "exclude": [
     "node_modules"

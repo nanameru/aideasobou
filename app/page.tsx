@@ -381,6 +381,14 @@ export default function Home() {
                 </li>
                 <li>
                   <Link 
+                    href="/privacy" 
+                    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                  >
+                    プライバシーポリシー
+                  </Link>
+                </li>
+                <li>
+                  <Link 
                     href="/tokushoho" 
                     className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                   >

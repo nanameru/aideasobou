@@ -7,7 +7,7 @@ export default function PrivacyPolicyPage() {
       <header className="notion-nav sticky top-0 z-10 backdrop-blur-sm bg-white/90 dark:bg-black/90">
         <div className="notion-like py-4">
           <div className="flex justify-between items-center">
-            <h1 className="font-bold text-xl tracking-tight">AIで遊ぼうコミュニティー</h1>
+            <h1 className="font-bold text-xl tracking-tight">木村 太陽（AIで遊ぼうコミュニティー）</h1>
             <Link href="/" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors flex items-center group">
               <span className="mr-2 group-hover:mr-3 transition-all">←</span> 
               <span>ホームに戻る</span>
@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <div className="mb-12">
                 <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                  AIで遊ぼうコミュニティー（以下、「当コミュニティ」）は、ユーザーの個人情報保護を重要視し、個人情報の保護に関する法律を遵守するとともに、以下のプライバシーポリシーに従って個人情報を適切に取り扱います。
+                  木村 太陽（AIで遊ぼうコミュニティー）（以下、「当コミュニティ」）は、ユーザーの個人情報保護を重要視し、個人情報の保護に関する法律を遵守するとともに、以下のプライバシーポリシーに従って個人情報を適切に取り扱います。
                 </p>
                 
                 <div className="notion-card mb-10 p-8 rounded-xl">
@@ -114,7 +114,7 @@ export default function PrivacyPolicyPage() {
                 </div>
                 
                 <p className="text-gray-600 dark:text-gray-400 mt-8 leading-relaxed">
-                  最終更新日: 2025年3月14日
+                  最終更新日: 2025年3月17日
                 </p>
               </div>
             </div>
@@ -134,7 +134,7 @@ export default function PrivacyPolicyPage() {
           <div className="max-w-3xl mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="mb-6 md:mb-0">
-                <h2 className="font-bold text-xl mb-4 tracking-tight">AIで遊ぼうコミュニティー</h2>
+                <h2 className="font-bold text-xl mb-4 tracking-tight">木村 太陽（AIで遊ぼうコミュニティー）</h2>
                 <p className="text-gray-600 dark:text-gray-400">
                   最新のAI情報をキャッチアップし、AIの可能性を一緒に探求するコミュニティ
                 </p>
@@ -156,7 +156,7 @@ export default function PrivacyPolicyPage() {
             </div>
             <div className="notion-divider mt-8"></div>
             <p className="text-gray-600 dark:text-gray-400 text-center">
-              © 2025 AIで遊ぼうコミュニティー. All rights reserved.
+              © 2025 木村 太陽（AIで遊ぼうコミュニティー）. All rights reserved.
             </p>
           </div>
         </div>

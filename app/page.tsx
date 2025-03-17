@@ -18,7 +18,7 @@ export default function Home() {
             <div className="relative z-10">
               <Link href="/" className="block">
                 <h1 className="font-bold text-xl md:text-2xl text-gray-900 dark:text-gray-100">
-                  AIで遊ぼうコミュニティー
+                  木村 太陽（AIで遊ぼうコミュニティー）
                 </h1>
               </Link>
             </div>
@@ -346,7 +346,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             <div>
-              <h3 className="font-medium text-lg mb-4 text-gray-900 dark:text-gray-100">AIで遊ぼうコミュニティー</h3>
+              <h3 className="font-medium text-lg mb-4 text-gray-900 dark:text-gray-100">木村 太陽（AIで遊ぼうコミュニティー）</h3>
               <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
                 最新のAI情報をキャッチアップし、AIの可能性を一緒に探求するコミュニティです。初心者から上級者まで、あらゆるレベルの方をサポートします。
               </p>
@@ -430,7 +430,7 @@ export default function Home() {
           <div className="notion-divider mt-12 mb-8"></div>
           
           <div className="text-center text-gray-500 dark:text-gray-500 text-sm">
-            <p>&copy; {new Date().getFullYear()} AIで遊ぼうコミュニティー. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} 木村 太陽（AIで遊ぼうコミュニティー）. All rights reserved.</p>
           </div>
         </div>
       </footer>

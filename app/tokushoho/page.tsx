@@ -35,7 +35,7 @@ export default function TokushohoPage() {
                     <tbody>
                       <tr className="border-b border-gray-200 dark:border-gray-800">
                         <th className="py-4 pr-4 text-left align-top w-1/3">販売業者の名称</th>
-                        <td className="py-4">AIで遊ぼうコミュニティー</td>
+                        <td className="py-4">木村 太陽（屋号：AIで遊ぼうコミュニティー）</td>
                       </tr>
                       <tr className="border-b border-gray-200 dark:border-gray-800">
                         <th className="py-4 pr-4 text-left align-top">運営統括責任者</th>
@@ -44,13 +44,14 @@ export default function TokushohoPage() {
                       <tr className="border-b border-gray-200 dark:border-gray-800">
                         <th className="py-4 pr-4 text-left align-top">所在地</th>
                         <td className="py-4">
-                          <p>請求があったら遅滞なく開示します</p>
+                          <p>〒251-0001 神奈川県藤沢市白幡3-2-5</p>
                         </td>
                       </tr>
                       <tr className="border-b border-gray-200 dark:border-gray-800">
                         <th className="py-4 pr-4 text-left align-top">電話番号</th>
                         <td className="py-4">
-                          <p>請求があったら遅滞なく開示します</p>
+                          <p>050-2169-4690</p>
+                          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">受付時間：10:00-18:00（土日祝を除く）</p>
                         </td>
                       </tr>
                       <tr className="border-b border-gray-200 dark:border-gray-800">
@@ -138,7 +139,7 @@ export default function TokushohoPage() {
                       <tr className="border-b border-gray-200 dark:border-gray-800">
                         <th className="py-4 pr-4 text-left align-top w-1/3">サービスに不備がある場合</th>
                         <td className="py-4">
-                          <p>サービスに不備がある場合は、メールアドレス（4869nanataitai@gmail.com）までご連絡ください。状況を確認の上、適切に対応いたします。状況によっては返金対応も検討いたします。</p>
+                          <p>サービスに不備がある場合は、お客様サポートセンター（電話番号：050-2169-4690、メール：4869nanataitai@gmail.com）までご連絡ください。状況を確認の上、当社の責任による不備の場合は、全額返金またはサービスの再提供にて対応いたします。</p>
                         </td>
                       </tr>
                       <tr className="border-b border-gray-200 dark:border-gray-800">
@@ -148,6 +149,7 @@ export default function TokushohoPage() {
                             <li>サブスクリプションは月単位での課金となり、解約時点で日割り計算での返金はいたしません。</li>
                             <li>次回の請求日前にキャンセルされた場合、次回以降の請求は発生しません。</li>
                             <li>サブスクリプションのキャンセルは、いつでもマイページから可能です。</li>
+                            <li>サービス利用開始前のキャンセルについては、お客様サポートセンター（電話番号：050-2169-4690）までご連絡ください。</li>
                           </ul>
                         </td>
                       </tr>

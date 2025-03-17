@@ -35,11 +35,11 @@ export default function TokushohoPage() {
                     <tbody>
                       <tr className="border-b border-gray-200 dark:border-gray-800">
                         <th className="py-4 pr-4 text-left align-top w-1/3">販売業者の名称</th>
-                        <td className="py-4">木村 太陽（屋号：AIで遊ぼうコミュニティー）</td>
+                        <td className="py-4">AIで遊ぼうコミュニティー</td>
                       </tr>
                       <tr className="border-b border-gray-200 dark:border-gray-800">
                         <th className="py-4 pr-4 text-left align-top">運営統括責任者</th>
-                        <td className="py-4">木村 太陽</td>
+                        <td className="py-4">AIで遊ぼうコミュニティー</td>
                       </tr>
                       <tr className="border-b border-gray-200 dark:border-gray-800">
                         <th className="py-4 pr-4 text-left align-top">所在地</th>

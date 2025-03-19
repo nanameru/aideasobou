@@ -3,6 +3,19 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --notion-blue: #2383E2;
+  --notion-purple: #9B51E0;
+  --notion-red: #FF7369;
+  --notion-yellow: #FFDC49;
+  --notion-green: #4DAB9A;
+  --notion-gray: #9B9A97;
+  --notion-brown: #937264;
+  --notion-orange: #D9730D;
+  --notion-pink: #FF8BCB;
+  --notion-border: rgba(55, 53, 47, 0.09);
+  --notion-border-dark: rgba(255, 255, 255, 0.13);
+  --notion-shadow: rgba(15, 15, 15, 0.05);
+  --notion-shadow-dark: rgba(15, 15, 15, 0.1);
 }
 
 @layer utilities {
@@ -20,8 +33,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #191919;
     --foreground: #ededed;
+    --notion-border: rgba(255, 255, 255, 0.13);
+    --notion-shadow: rgba(255, 255, 255, 0.05);
   }
 }
 
@@ -30,7 +45,7 @@ body {
   color: var(--foreground);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
   line-height: 1.5;
-  letter-spacing: normal;
+  letter-spacing: -0.01em;
   font-size: 16px;
   @apply sm:text-base;
   -webkit-font-smoothing: antialiased;
@@ -61,28 +76,31 @@ h1, h2, h3, h4, h5, h6 {
 
 .notion-card {
   @apply border border-gray-200 dark:border-gray-800 rounded-lg p-6 md:p-8 transition-all w-full;
+  border: 1px solid var(--notion-border);
   box-shadow: none;
-  transition: box-shadow 0.2s ease-out;
+  transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
 }
 
 .notion-card:hover {
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 6px;
-  transform: none;
+  box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 2px 4px;
+  transform: translateY(-1px);
 }
 
 .notion-button {
-  @apply bg-black text-white dark:bg-white dark:text-black px-5 py-2 rounded-md font-medium transition-all inline-flex items-center text-sm sm:text-base;
-  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+  @apply px-5 py-2 rounded-md font-medium transition-all inline-flex items-center text-sm sm:text-base;
+  background-color: var(--notion-blue);
+  color: white;
+  transition: background-color 0.2s ease-out, transform 0.2s ease-out;
 }
 
 .notion-button:hover {
-  @apply opacity-90;
+  background-color: #1B76D4;
   transform: translateY(-1px);
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 6px;
 }
 
 .notion-secondary-button {
-  @apply bg-transparent border border-gray-200 dark:border-gray-800 text-gray-800 dark:text-gray-200 px-6 py-3 rounded-md font-medium transition-all inline-flex items-center;
+  @apply bg-transparent border text-gray-800 dark:text-gray-200 px-6 py-3 rounded-md font-medium transition-all inline-flex items-center;
+  border: 1px solid var(--notion-border);
 }
 
 .notion-secondary-button:hover {
@@ -92,6 +110,136 @@ h1, h2, h3, h4, h5, h6 {
 .notion-section {
   @apply py-12 sm:py-20 md:py-24;
   animation: fadeIn 0.3s ease-out forwards;
+}
+
+.notion-section:nth-child(2) {
+  animation-delay: 0.05s;
+}
+
+.notion-section:nth-child(3) {
+  animation-delay: 0.1s;
+}
+
+.notion-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--notion-border);
+  margin: 1.5rem 0;
+}
+
+.notion-tag {
+  @apply inline-flex items-center px-2 py-1 rounded-md text-xs font-medium mr-2 mb-2;
+  background-color: rgba(35, 131, 226, 0.14);
+  color: var(--notion-blue);
+}
+
+.notion-tag-yellow {
+  background-color: rgba(255, 220, 73, 0.14);
+  color: #D9730D;
+}
+
+.notion-tag-green {
+  background-color: rgba(77, 171, 154, 0.14);
+  color: var(--notion-green);
+}
+
+.notion-tag-red {
+  background-color: rgba(255, 115, 105, 0.14);
+  color: var(--notion-red);
+}
+
+.notion-tag-purple {
+  background-color: rgba(155, 81, 224, 0.14);
+  color: var(--notion-purple);
+}
+
+.enhanced-card {
+  @apply transition-all;
+  border: 1px solid var(--notion-border);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  transform: translateY(0);
+  box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, 
+              rgba(15, 15, 15, 0.1) 0px 3px 6px, 
+              rgba(15, 15, 15, 0.2) 0px 9px 24px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.enhanced-card:hover {
+  transform: translateY(-2px);
+  box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, 
+              rgba(15, 15, 15, 0.1) 0px 5px 10px, 
+              rgba(15, 15, 15, 0.2) 0px 15px 40px;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.dark .glass-card {
+  background: rgba(25, 25, 25, 0.7);
+}
+
+.enhanced-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.enhanced-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.enhanced-button:hover::after {
+  opacity: 1;
+}
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-100%);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .notion-section:nth-child(2) {

@@ -79,8 +79,20 @@ export default function Home() {
       <section className="py-12 md:py-20 relative overflow-hidden min-h-[90vh] flex items-center">
         <div className="max-w-5xl mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            {/* Left content */}
-            <div className="text-left">
+            {/* Image content - モバイルでは上に表示 */}
+            <div className="relative h-[300px] sm:h-[350px] md:h-[400px] rounded-2xl overflow-hidden order-1 md:order-2">
+              <Image 
+                src="/images/ai/ai-generated-image.jpeg" 
+                alt="AIで生成された画像" 
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover rounded-2xl"
+              />
+            </div>
+            
+            {/* Text content - モバイルでは下に表示 */}
+            <div className="text-left order-2 md:order-1">
               <div className="mb-8 relative">
                 <div className="inline-block bg-black dark:bg-white text-white dark:text-black px-4 py-2 rounded-lg text-sm font-medium mb-6 relative z-10 shadow-lg">
                   <span className="relative z-10">AIの可能性を一緒に探求しよう</span>
@@ -109,18 +121,6 @@ export default function Home() {
                   今すぐ参加する
                 </GoogleFormButton>
               </div>
-            </div>
-            
-            {/* Right content - AI Image */}
-            <div className="relative h-[300px] sm:h-[350px] md:h-[400px] rounded-2xl overflow-hidden">
-              <Image 
-                src="/images/ai/ai-generated-image.jpeg" 
-                alt="AIで生成された画像" 
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover rounded-2xl"
-              />
             </div>
           </div>
         </div>

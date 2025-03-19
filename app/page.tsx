@@ -79,8 +79,8 @@ export default function Home() {
       <section className="py-12 md:py-20 relative overflow-hidden min-h-[90vh] flex items-center">
         <div className="max-w-5xl mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            {/* Image content - モバイルでは上に表示 */}
-            <div className="relative h-[300px] sm:h-[350px] md:h-[400px] rounded-2xl overflow-hidden order-1 md:order-2">
+            {/* Image content - モバイルでは中央に表示 */}
+            <div className="relative h-[300px] sm:h-[350px] md:h-[400px] rounded-2xl overflow-hidden order-1 md:order-2 mx-auto w-full max-w-md">
               <Image 
                 src="/images/ai/ai-generated-image.jpeg" 
                 alt="AIで生成された画像" 

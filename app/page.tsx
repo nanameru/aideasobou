@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { ArrowRightIcon, CheckIcon, LightBulbIcon, CalendarIcon, SearchIcon } from './components/ui/icons';
 import { GoogleFormButton } from './components/client/google-form-button';
 import { MobileMenu } from './components/client/mobile-menu';
+import { FloatingPaws } from './components/client/floating-paws';
 
 export default function Home() {
   // Google Form URL for community sign-up
@@ -76,7 +77,8 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-12 md:py-20 relative overflow-hidden min-h-[90vh] flex items-center">
+      <section className="py-12 md:py-20 relative overflow-hidden min-h-[90vh] flex items-center hero-gradient">
+        <FloatingPaws count={30} />
         <div className="max-w-5xl mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* Left content */}

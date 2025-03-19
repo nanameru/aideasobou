@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { ArrowRightIcon, CheckIcon, LightBulbIcon, CalendarIcon, SearchIcon } from './components/ui/icons';
 import { GoogleFormButton } from './components/client/google-form-button';
 import { MobileMenu } from './components/client/mobile-menu';
-import { FloatingPaws } from './components/client/floating-paws';
 
 export default function Home() {
   // Google Form URL for community sign-up
@@ -77,8 +76,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-12 md:py-20 relative overflow-hidden min-h-[90vh] flex items-center hero-gradient">
-        <FloatingPaws count={30} />
+      <section className="py-12 md:py-20 relative overflow-hidden min-h-[90vh] flex items-center">
         <div className="max-w-5xl mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* Left content */}
@@ -89,10 +87,10 @@ export default function Home() {
                 </div>
                 
                 <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-tight relative">
-                  <span className="block mb-2 text-gray-700 dark:text-gray-300 shimmer">
+                  <span className="block mb-2 text-gray-700 dark:text-gray-300">
                     AIで遊ぼう
                   </span>
-                  <span className="block text-gray-700 dark:text-gray-300 shimmer">
+                  <span className="block text-gray-700 dark:text-gray-300">
                     コミュニティー
                   </span>
                 </h2>
